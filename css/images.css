@@ -1,0 +1,189 @@
+/* Responsive Images and Asset Management */
+
+/* Logo responsive sizing */
+.logo {
+  width: 120px;
+  height: 40px;
+  background-image: url('../assets/Full logo/Logo transparent-03.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+  flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 140px;
+    height: 45px;
+    background-image: url('../assets/Full logo/Logo transparent-03.png');
+  }
+}
+
+@media (min-width: 1024px) {
+  .logo {
+    width: 160px;
+    height: 50px;
+    background-image: url('../assets/Full logo/Logo transparent-03.png');
+  }
+}
+
+/* High DPI displays - use same white logo */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .logo {
+    background-image: url('../assets/Full logo/Logo transparent-03.png');
+  }
+}
+
+/* Hero Image Section - using Facebook banner */
+.hero-image-section {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1a0d2e; /* Dark purple fallback while loading */
+  position: relative;
+}
+
+/* Critical hero background for immediate loading */
+.hero-image-section.critical-bg {
+  background-image: url('../assets/Banners/Side quest market [facebook banner].jpg');
+}
+
+@media (min-width: 768px) {
+  .hero-image-section.critical-bg {
+    background-image: url('../assets/Social media/Side quest market [facebook banner].jpg');
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-image-section.critical-bg {
+    background-image: url('../assets/Banners/Side quest market [facebook banner].jpg');
+  }
+}
+
+/* Dice decorative elements */
+.dice-decoration {
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  position: relative;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Use full-color dice for better visual impact */
+.dice-decoration.dice-purple,
+.dice-decoration.dice-white,
+.dice-decoration.dice-black {
+  background-image: url('../assets/Dice/Dice full colour-01.png');
+}
+
+/* Alternate dice for variety */
+.dice-decoration.dice-alt {
+  background-image: url('../assets/Dice/Dice full colour-02.png');
+}
+
+/* Size variants */
+.dice-decoration--small {
+  width: 32px;
+  height: 32px;
+}
+
+.dice-decoration--medium {
+  width: 56px;
+  height: 56px;
+}
+
+.dice-decoration--large {
+  width: 64px;
+  height: 64px;
+}
+
+/* Critical dice images for immediate loading */
+.dice-decoration.critical-dice {
+  background-image: url('../assets/Dice/Dice full colour-01.png');
+}
+
+.dice-decoration.critical-dice.dice-alt {
+  background-image: url('../assets/Dice/Dice full colour-02.png');
+}
+
+/* Lazy loading support */
+.lazy-loading {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  transform: translateY(20px);
+}
+
+.lazy-loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lazy-error {
+  opacity: 0.7;
+  background-color: var(--color-light-purple, #A78BFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white, #FFFFFF);
+  font-size: 0.75rem;
+  text-align: center;
+  min-height: 32px;
+}
+
+/* Loading skeleton animation */
+.lazy-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  animation: loading-shimmer 1.5s infinite;
+}
+
+@keyframes loading-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Image optimization utilities */
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Fallback for missing images */
+.image-fallback {
+  background-color: var(--color-purple-light, #A78BFA);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-white, #FFFFFF);
+  font-size: 0.875rem;
+  text-align: center;
+  min-height: 100px;
+}
+
+/* Performance optimizations */
+.preload-hero {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}

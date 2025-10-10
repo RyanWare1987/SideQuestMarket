@@ -1,0 +1,20 @@
+# Development files
+node_modules/
+.DS_Store
+*.log
+
+# Test files
+*test*.html
+test-*.js
+test-*.css
+
+# Development documentation
+CRITICAL-MOBILE-FIXES-V2.md
+MOBILE-RESPONSIVE-FIXES.md
+TASK-13-VALIDATION-REPORT.md
+
+# Kiro specs (optional - you might want to keep these)
+.kiro/
+
+# Build artifacts (if using root deployment)
+# dist/

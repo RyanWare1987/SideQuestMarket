@@ -1,0 +1,214 @@
+/* ===================================
+   ANIMATED DICE BACKGROUND
+   =================================== */
+
+/* Dice background container */
+.dice-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Individual falling dice */
+.falling-dice {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background-image: url('../assets/Dice/Dice-white.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.1;
+  pointer-events: none;
+  will-change: transform;
+  /* Fallback for testing */
+  background-color: rgba(107, 70, 193, 0.2);
+  border-radius: 4px;
+}
+
+/* Light mode dice styling */
+.falling-dice {
+  filter: hue-rotate(270deg) saturate(0.3) brightness(0.8);
+  opacity: 0.3; /* Increased for testing */
+}
+
+/* Dark mode dice styling */
+body.dark-mode .falling-dice {
+  filter: hue-rotate(45deg) saturate(0.5) brightness(1.2);
+  opacity: 0.4; /* Increased for testing */
+}
+
+/* Dice size variations */
+.falling-dice.small {
+  width: 16px;
+  height: 16px;
+  opacity: 0.06;
+}
+
+.falling-dice.medium {
+  width: 24px;
+  height: 24px;
+  opacity: 0.08;
+}
+
+.falling-dice.large {
+  width: 32px;
+  height: 32px;
+  opacity: 0.1;
+}
+
+/* Dark mode size variations */
+body.dark-mode .falling-dice.small {
+  opacity: 0.08;
+}
+
+body.dark-mode .falling-dice.medium {
+  opacity: 0.12;
+}
+
+body.dark-mode .falling-dice.large {
+  opacity: 0.15;
+}
+
+/* Falling animation keyframes */
+@keyframes fallAndRotate {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  90% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallAndRotateReverse {
+  0% {
+    transform: translateY(-100px) rotate(360deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  90% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fallAndWobble {
+  0% {
+    transform: translateY(-100px) rotate(0deg) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  25% {
+    transform: translateY(25vh) rotate(90deg) translateX(10px);
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(-5px);
+  }
+  75% {
+    transform: translateY(75vh) rotate(270deg) translateX(8px);
+  }
+  90% {
+    opacity: var(--dice-opacity, 0.08);
+  }
+  100% {
+    transform: translateY(calc(100vh + 100px)) rotate(360deg) translateX(0px);
+    opacity: 0;
+  }
+}
+
+/* Animation classes */
+.falling-dice.fall-1 {
+  animation: fallAndRotate 12s linear infinite;
+}
+
+.falling-dice.fall-2 {
+  animation: fallAndRotateReverse 15s linear infinite;
+}
+
+.falling-dice.fall-3 {
+  animation: fallAndWobble 18s linear infinite;
+}
+
+/* Staggered animation delays */
+.falling-dice:nth-child(1) { animation-delay: 0s; }
+.falling-dice:nth-child(2) { animation-delay: 2s; }
+.falling-dice:nth-child(3) { animation-delay: 4s; }
+.falling-dice:nth-child(4) { animation-delay: 6s; }
+.falling-dice:nth-child(5) { animation-delay: 8s; }
+.falling-dice:nth-child(6) { animation-delay: 10s; }
+.falling-dice:nth-child(7) { animation-delay: 1s; }
+.falling-dice:nth-child(8) { animation-delay: 3s; }
+.falling-dice:nth-child(9) { animation-delay: 5s; }
+.falling-dice:nth-child(10) { animation-delay: 7s; }
+.falling-dice:nth-child(11) { animation-delay: 9s; }
+.falling-dice:nth-child(12) { animation-delay: 11s; }
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .falling-dice {
+    opacity: 0.05;
+  }
+  
+  body.dark-mode .falling-dice {
+    opacity: 0.08;
+  }
+  
+  .falling-dice.small {
+    width: 12px;
+    height: 12px;
+  }
+  
+  .falling-dice.medium {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .falling-dice.large {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .falling-dice {
+    animation: none;
+    opacity: 0.02;
+    transform: translateY(50vh) rotate(45deg);
+  }
+  
+  body.dark-mode .falling-dice {
+    opacity: 0.04;
+  }
+}
+
+/* Performance optimizations */
+.dice-background {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.falling-dice {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

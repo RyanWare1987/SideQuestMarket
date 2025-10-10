@@ -1,0 +1,26 @@
+{
+  "name": "side-quest-market-landing",
+  "version": "1.0.0",
+  "description": "Landing page for Side Quest Market - Alternative Gaming Market",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build-production.js",
+    "serve": "python3 -m http.server 8000",
+    "serve-dist": "cd dist && python3 -m http.server 8000",
+    "clean": "rm -rf dist",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "keywords": [
+    "gaming",
+    "market",
+    "landing-page",
+    "accessibility",
+    "responsive"
+  ],
+  "author": "Side Quest Market",
+  "license": "MIT",
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

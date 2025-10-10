@@ -1,0 +1,429 @@
+/* ===================================
+   ACCESSIBILITY ENHANCEMENTS
+   =================================== */
+
+/* ===================================
+   ENHANCED FOCUS INDICATORS
+   =================================== */
+
+/* Global focus styles for better visibility */
+*:focus {
+  outline: none;
+}
+
+/* Enhanced focus indicators for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 0 0 1px var(--color-pure-white);
+}
+
+/* Skip link completely hidden */
+.skip-link {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Navigation focus enhancements */
+.nav-link:focus-visible,
+.mobile-nav-link:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  background-color: rgba(107, 70, 193, 0.1);
+  border-radius: var(--radius-sm);
+}
+
+.mobile-menu-toggle:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  background-color: rgba(107, 70, 193, 0.1);
+}
+
+/* Logo focus indicator */
+.logo:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+/* Button focus enhancements */
+.cta-button:focus-visible,
+.form-submit-btn:focus-visible {
+  outline: 3px solid var(--color-light-purple);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 1px var(--color-pure-white), 0 8px 25px rgba(107, 70, 193, 0.4);
+}
+
+/* Form element focus enhancements */
+.form-input:focus-visible,
+.form-textarea:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  border-color: var(--color-primary-purple);
+  box-shadow: 0 0 0 1px var(--color-pure-white), 0 0 0 4px rgba(107, 70, 193, 0.2);
+}
+
+/* Footer link focus enhancements */
+.footer-link:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  background-color: rgba(107, 70, 193, 0.1);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+}
+
+/* ===================================
+   KEYBOARD NAVIGATION ENHANCEMENTS
+   =================================== */
+
+/* Focus trap for mobile menu */
+.mobile-nav[aria-hidden="false"] {
+  /* Ensure mobile menu is focusable when open */
+  visibility: visible;
+}
+
+.mobile-nav[aria-hidden="true"] {
+  /* Hide mobile menu from keyboard navigation when closed */
+  visibility: hidden;
+}
+
+/* Enhanced tab order indicators */
+.nav-link[tabindex="0"],
+.mobile-nav-link[tabindex="0"],
+.cta-button[tabindex="0"],
+.form-input[tabindex="0"],
+.form-textarea[tabindex="0"],
+.form-submit-btn[tabindex="0"] {
+  /* Ensure proper tab order */
+  position: relative;
+}
+
+/* Visual indicator for keyboard users */
+body.keyboard-navigation *:focus-visible {
+  animation: focusPulse 0.3s ease-in-out;
+}
+
+@keyframes focusPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* ===================================
+   SCREEN READER ENHANCEMENTS
+   =================================== */
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Screen reader only text that becomes visible on focus */
+.sr-only-focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  padding: var(--space-2);
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background-color: var(--color-primary-purple);
+  color: var(--color-pure-white);
+  border-radius: var(--radius-sm);
+  z-index: var(--z-tooltip);
+}
+
+/* Enhanced ARIA live regions */
+[aria-live="polite"],
+[aria-live="assertive"] {
+  /* Ensure live regions are positioned for screen readers */
+  position: relative;
+}
+
+/* Status messages for screen readers */
+.form-status[role="status"],
+.error-message[role="alert"] {
+  /* Ensure status messages are announced */
+  position: relative;
+}
+
+/* ===================================
+   HIGH CONTRAST MODE SUPPORT
+   =================================== */
+
+@media (prefers-contrast: high) {
+  /* Enhanced contrast for focus indicators */
+  *:focus-visible {
+    outline: 4px solid;
+    outline-color: Highlight;
+    outline-offset: 2px;
+  }
+  
+  /* High contrast button styles */
+  .cta-button,
+  .form-submit-btn {
+    border: 3px solid;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  /* High contrast form elements */
+  .form-input,
+  .form-textarea {
+    border: 3px solid;
+  }
+  
+  /* High contrast navigation */
+  .nav-link,
+  .mobile-nav-link {
+    border: 2px solid transparent;
+  }
+  
+  .nav-link:hover,
+  .nav-link:focus,
+  .mobile-nav-link:hover,
+  .mobile-nav-link:focus {
+    border-color: currentColor;
+    background-color: Canvas;
+    color: CanvasText;
+  }
+}
+
+/* ===================================
+   REDUCED MOTION SUPPORT
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  /* Disable animations for users who prefer reduced motion */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Remove focus pulse animation */
+  body.keyboard-navigation *:focus-visible {
+    animation: none;
+  }
+  
+  /* Remove hover transforms */
+  .cta-button:hover,
+  .form-submit-btn:hover {
+    transform: none;
+  }
+}
+
+/* ===================================
+   TOUCH TARGET ENHANCEMENTS
+   =================================== */
+
+/* Ensure minimum touch target size (44x44px) */
+.nav-link,
+.mobile-nav-link,
+.mobile-menu-toggle,
+.cta-button,
+.form-submit-btn,
+.footer-link {
+  min-width: 44px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2) var(--space-3);
+}
+
+/* Specific adjustments for smaller elements */
+.dice-decoration[role="img"] {
+  min-width: 32px;
+  min-height: 32px;
+}
+
+/* ===================================
+   KEYBOARD NAVIGATION HELPERS
+   =================================== */
+
+/* Focus management for modal/overlay states */
+body.modal-open {
+  overflow: hidden;
+}
+
+body.modal-open .mobile-nav {
+  /* Ensure mobile menu is in focus flow when open */
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: var(--z-modal);
+}
+
+/* Focus indicators for card components */
+.event-details-card:focus-within,
+.event-description-card:focus-within,
+.faq-category:focus-within {
+  outline: 2px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  border-radius: var(--radius-lg);
+}
+
+/* Enhanced focus for interactive dice decorations */
+.dice-decoration[tabindex="0"]:focus-visible {
+  outline: 3px solid var(--color-primary-purple);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* ===================================
+   PRINT ACCESSIBILITY
+   =================================== */
+
+@media print {
+  /* Ensure focus indicators are visible in print */
+  *:focus {
+    outline: 2px solid black !important;
+  }
+  
+  /* Hide skip links in print */
+  .skip-link {
+    display: none;
+  }
+  
+  /* Ensure sufficient contrast in print */
+  .nav-link,
+  .footer-link {
+    color: black !important;
+    text-decoration: underline;
+  }
+}
+
+/* ===================================
+   BROWSER-SPECIFIC ENHANCEMENTS
+   =================================== */
+
+/* Firefox specific focus enhancements */
+@-moz-document url-prefix() {
+  *:focus-visible {
+    outline: 3px solid var(--color-primary-purple);
+    outline-offset: 2px;
+  }
+}
+
+/* Safari specific focus enhancements */
+@supports (-webkit-appearance: none) {
+  *:focus-visible {
+    outline: 3px solid var(--color-primary-purple);
+    outline-offset: 2px;
+  }
+}
+
+/* ===================================
+   FORM ACCESSIBILITY ENHANCEMENTS
+   =================================== */
+
+/* Fieldset styling for better form organization */
+.form-fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.form-fieldset legend {
+  padding: 0;
+  margin-bottom: var(--space-4);
+}
+
+/* Enhanced form validation states */
+.form-input[aria-invalid="true"],
+.form-textarea[aria-invalid="true"] {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+}
+
+.form-input[aria-invalid="false"]:valid,
+.form-textarea[aria-invalid="false"]:valid {
+  border-color: #16a34a;
+}
+
+/* Help text styling */
+.form-group .sr-only {
+  /* Ensure help text is available to screen readers */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===================================
+   RESPONSIVE ACCESSIBILITY
+   =================================== */
+
+/* Mobile-specific accessibility enhancements */
+@media (max-width: 767px) {
+  /* Larger touch targets on mobile */
+  .nav-link,
+  .mobile-nav-link,
+  .cta-button,
+  .form-submit-btn {
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+  }
+  
+  /* Enhanced mobile menu focus */
+  .mobile-nav-link:focus-visible {
+    background-color: rgba(107, 70, 193, 0.2);
+    border-left: 4px solid var(--color-primary-purple);
+  }
+}
+
+/* Tablet-specific accessibility enhancements */
+@media (min-width: 768px) and (max-width: 1023px) {
+  /* Balanced touch targets for tablet */
+  .nav-link,
+  .cta-button,
+  .form-submit-btn {
+    min-height: 46px;
+  }
+}
+
+/* Desktop-specific accessibility enhancements */
+@media (min-width: 1024px) {
+  /* Standard touch targets for desktop */
+  .nav-link,
+  .cta-button,
+  .form-submit-btn {
+    min-height: 44px;
+  }
+  
+  /* Enhanced hover states for desktop */
+  .nav-link:hover:focus-visible,
+  .cta-button:hover:focus-visible,
+  .form-submit-btn:hover:focus-visible {
+    outline-color: var(--color-light-purple);
+  }
+}

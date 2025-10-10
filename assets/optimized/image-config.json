@@ -1,0 +1,31 @@
+{
+  "logos": {
+    "main": {
+      "src": "logos/logo-192.png",
+      "alt": "Side Quest Market Logo",
+      "sizes": [
+        { "size": "192x192", "src": "logos/logo-192.png" },
+        { "size": "96x96", "src": "logos/logo-96.png" },
+        { "size": "48x48", "src": "logos/logo-48.png" }
+      ]
+    }
+  },
+  "dice": {
+    "decorative": {
+      "purple": "dice/dice-purple.png",
+      "white": "dice/dice-white.png",
+      "black": "dice/dice-black.png"
+    },
+    "icons": {
+      "small": "dice/dice-32.png",
+      "medium": "dice/dice-64.png"
+    }
+  },
+  "backgrounds": {
+    "hero": {
+      "desktop": "backgrounds/hero-bg-1920.jpg",
+      "tablet": "backgrounds/hero-bg-1024.jpg",
+      "mobile": "backgrounds/hero-bg-768.jpg"
+    }
+  }
+}

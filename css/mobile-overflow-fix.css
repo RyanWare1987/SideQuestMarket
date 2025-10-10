@@ -1,0 +1,195 @@
+/**
+ * Mobile Overflow Fix
+ * Prevents horizontal scrolling on mobile devices
+ */
+
+/* Global overflow prevention */
+* {
+  box-sizing: border-box !important;
+}
+
+html {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Prevent all containers from overflowing */
+.container,
+.nav-container,
+.hero-banner-container,
+.event-details-grid,
+.venue-faq-container,
+.contact-container,
+.footer-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
+}
+
+/* Prevent media from overflowing */
+img, video, iframe, canvas, svg, picture {
+  max-width: 100% !important;
+  height: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Mobile-specific overflow fixes */
+@media (max-width: 767px) {
+  /* Ensure viewport units work correctly */
+  html {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+  
+  body {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+    position: relative !important;
+  }
+  
+  /* Fix all major sections */
+  .site-header,
+  .hero-image-section,
+  .hero-banner-section,
+  .event-info-section,
+  .venue-details-section,
+  .contact-section,
+  .site-footer {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Fix navigation container */
+  .nav-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix hero sections */
+  .hero-banner-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix content containers */
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix cards and grids */
+  .event-details-grid,
+  .venue-faq-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  .event-details-card,
+  .event-description-card,
+  .faq-category {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix form containers */
+  .contact-container,
+  .contact-form {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix footer */
+  .footer-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+    box-sizing: border-box !important;
+  }
+  
+  /* Fix any text that might overflow */
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    hyphens: auto !important;
+  }
+  
+  /* Fix tables if any */
+  table {
+    width: 100% !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+  }
+  
+  /* Fix pre and code elements */
+  pre, code {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-x: auto !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Additional safety measures */
+@media (max-width: 480px) {
+  /* Extra small devices */
+  .container {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+  
+  .nav-container,
+  .hero-banner-container,
+  .footer-content {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+}
+
+/* Debug mode - uncomment to see overflow issues */
+/*
+* {
+  outline: 1px solid red !important;
+}
+
+.container {
+  background: rgba(255, 0, 0, 0.1) !important;
+}
+*/
