@@ -2,20 +2,8 @@
  * Contact Form Module
  * Handles form validation, submission, and user feedback
  * 
- * SETUP INSTRUCTIONS:
- * 1. Create an EmailJS account at https://www.emailjs.com/
- * 2. Create a new service (Gmail integration)
- * 3. Create an email template with the following variables:
- *    - {{from_name}} - Sender's name
- *    - {{from_email}} - Sender's email
- *    - {{message}} - Message content
- *    - {{timestamp}} - Submission timestamp
- *    - {{to_email}} - Your Gmail address
- * 4. Update the emailJSConfig object below with your:
- *    - serviceID (from EmailJS dashboard)
- *    - templateID (from EmailJS dashboard)
- *    - userID (from EmailJS dashboard)
- * 5. Update the to_email in templateParams with your Gmail address
+ * Contact form integrated with Formspree for email delivery.
+ * Form submissions are sent to thesidequestmarket@gmail.com via Formspree.
  */
 
 class ContactForm {
@@ -27,12 +15,7 @@ class ContactForm {
     this.submitBtn = document.querySelector('.form-submit-btn');
     this.statusDiv = document.querySelector('.form-status');
 
-    // EmailJS configuration
-    this.emailJSConfig = {
-      serviceID: 'service_sidequest', // Replace with your EmailJS service ID
-      templateID: 'template_contact', // Replace with your EmailJS template ID
-      userID: 'your_emailjs_user_id' // Replace with your EmailJS user ID
-    };
+    // Form configuration (using Formspree for email delivery)
 
     this.validationRules = {
       name: {

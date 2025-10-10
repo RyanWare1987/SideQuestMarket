@@ -12,9 +12,15 @@ test-*.css
 CRITICAL-MOBILE-FIXES-V2.md
 MOBILE-RESPONSIVE-FIXES.md
 TASK-13-VALIDATION-REPORT.md
+README-PRODUCTION.md
 
 # Kiro specs (optional - you might want to keep these)
 .kiro/
 
 # Build artifacts (if using root deployment)
 # dist/
+
+# Package files (not needed for static site)
+package.json
+build.sh
+build-production.js
