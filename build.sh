@@ -92,7 +92,7 @@ cat > dist/index.html << 'EOF'
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <meta http-equiv="Expires" content="Thu, 31 Dec 2025 23:59:59 GMT">
     <link rel="dns-prefetch" href="//cdn.emailjs.com">
-    <link rel="dns-prefetch" href="//www.eventbrite.com">
+    <link rel="dns-prefetch" href="//www.eventbrite.com/e/the-side-quest-market-tickets-1415596730929">
     
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:title" content="Side Quest Market - Alternative Gaming Market">
