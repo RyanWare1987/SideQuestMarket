@@ -85,14 +85,14 @@ cat > dist/index.html << 'EOF'
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Side Quest Market - Alternative gaming market featuring board games, card games, and handcrafted items. Sunday 16th November 2025 at Greasley Sports Centre, Eastwood, Nottingham.">
-    <meta name="keywords" content="gaming market, board games, card games, alternative gaming, Side Quest Market, Nottingham, gaming event">
+    <meta name="keywords" content="gaming market, board games, card games, alternative gaming, The Side Quest Market, Nottingham, gaming event">
     <meta name="author" content="Side Quest Market">
     
     <!-- Performance and caching meta tags -->
     <meta http-equiv="Cache-Control" content="public, max-age=31536000">
     <meta http-equiv="Expires" content="Thu, 31 Dec 2025 23:59:59 GMT">
     <link rel="dns-prefetch" href="//cdn.emailjs.com">
-    <link rel="dns-prefetch" href="//www.eventbrite.com">
+    <link rel="dns-prefetch" href="//www.eventbrite.com/e/the-side-quest-market-tickets-1415596730929">
     
     <!-- Open Graph meta tags for social sharing -->
     <meta property="og:title" content="Side Quest Market - Alternative Gaming Market">
