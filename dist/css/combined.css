@@ -2408,6 +2408,136 @@ body.loaded .site-header {
   }
 }
 
+/* Social Media Links */
+.social-media-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin: var(--space-4) 0;
+}
+
+@media (min-width: 768px) {
+  .social-media-links {
+    justify-content: flex-start;
+    margin: var(--space-3) 0;
+  }
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  color: var(--color-light-purple);
+  text-decoration: none;
+  padding: var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  justify-content: center;
+}
+
+.social-link:hover,
+.social-link:focus {
+  color: var(--color-pure-white);
+  background-color: rgba(107, 70, 193, 0.2);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.social-link:focus {
+  box-shadow: 0 0 0 2px var(--color-primary-purple);
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease;
+}
+
+.social-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .social-text {
+    display: inline;
+  }
+  
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Facebook specific styling */
+.facebook-link:hover,
+.facebook-link:focus {
+  background-color: rgba(24, 119, 242, 0.2);
+  color: #1877f2;
+}
+
+/* Instagram specific styling */
+.instagram-link:hover,
+.instagram-link:focus {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-color: rgba(225, 48, 108, 0.2);
+}
+
+.instagram-link:hover .social-icon,
+.instagram-link:focus .social-icon {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark mode social media styles */
+body.dark-mode .social-link {
+  color: var(--color-accent-gold);
+}
+
+body.dark-mode .social-link:hover,
+body.dark-mode .social-link:focus {
+  color: var(--color-pure-white);
+  background-color: rgba(244, 208, 63, 0.2);
+}
+
+body.dark-mode .facebook-link:hover,
+body.dark-mode .facebook-link:focus {
+  background-color: rgba(24, 119, 242, 0.3);
+  color: #4a9eff;
+}
+
+/* Accessibility enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .social-link {
+    transition: none;
+  }
+  
+  .social-link:hover {
+    transform: none;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .social-link {
+    border: 1px solid transparent;
+  }
+  
+  .social-link:hover,
+  .social-link:focus {
+    border-color: currentColor;
+  }
+}
+
 /* Accessibility Statement Highlight */
 .footer-accessibility {
   background-color: rgba(107, 70, 193, 0.1);
