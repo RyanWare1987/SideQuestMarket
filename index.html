@@ -40,6 +40,7 @@
     <link rel="stylesheet" href="css/mobile-overflow-fix.css">
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/animated-dice.css">
+    <link rel="stylesheet" href="css/vendor-carousel.css">
 </head>
 
 <body>
@@ -62,6 +63,10 @@
                             aria-describedby="nav-event-desc">Event</a>
                     </li>
                     <li role="none">
+                        <a href="#vendor-logos" role="menuitem" class="nav-link"
+                            aria-describedby="nav-vendors-desc">Vendors</a>
+                    </li>
+                    <li role="none">
                         <a href="#venue-details" role="menuitem" class="nav-link"
                             aria-describedby="nav-venue-desc">Venue</a>
                     </li>
@@ -75,6 +80,7 @@
                 <div class="sr-only">
                     <div id="nav-home-desc">Navigate to top of page and event overview</div>
                     <div id="nav-event-desc">Navigate to event details and information</div>
+                    <div id="nav-vendors-desc">Navigate to vendor logos carousel section</div>
                     <div id="nav-venue-desc">Navigate to venue accessibility and amenities information</div>
                     <div id="nav-contact-desc">Navigate to contact form</div>
                 </div>
@@ -110,6 +116,10 @@
                                 aria-describedby="mobile-nav-event-desc">Event</a>
                         </li>
                         <li role="none">
+                            <a href="#vendor-logos" role="menuitem" class="mobile-nav-link"
+                                aria-describedby="mobile-nav-vendors-desc">Vendors</a>
+                        </li>
+                        <li role="none">
                             <a href="#venue-details" role="menuitem" class="mobile-nav-link"
                                 aria-describedby="mobile-nav-venue-desc">Venue</a>
                         </li>
@@ -123,6 +133,7 @@
                     <div class="sr-only">
                         <div id="mobile-nav-home-desc">Return to top of page</div>
                         <div id="mobile-nav-event-desc">View event date, time, and location details</div>
+                        <div id="mobile-nav-vendors-desc">View vendor logos carousel</div>
                         <div id="mobile-nav-venue-desc">View venue accessibility and facilities information</div>
                         <div id="mobile-nav-contact-desc">Access contact form to send message</div>
                     </div>
@@ -175,7 +186,8 @@
             aria-describedby="event-info-description">
             <div class="container">
                 <h2 id="event-info-title" class="section-heading">Event Information</h2>
-                <div class="sr-only" id="event-info-description">Detailed information about the The Side Quest Market event
+                <div class="sr-only" id="event-info-description">Detailed information about the The Side Quest Market
+                    event
                     including date, time, location, and description</div>
                 <div class="event-details-grid" role="group" aria-label="Event information cards">
                     <article class="event-details-card" aria-labelledby="event-details-heading"
@@ -238,6 +250,47 @@
                                 aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
                         </div>
                     </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vendor Logos Carousel Section -->
+        <section id="vendor-logos" class="vendor-logos-section" aria-labelledby="vendor-logos-title"
+            aria-describedby="vendor-logos-description">
+            <div class="container">
+                <h2 id="vendor-logos-title" class="section-heading">Our Vendors</h2>
+                <div class="sr-only" id="vendor-logos-description">Carousel showcasing logos of vendors participating in
+                    The Side Quest Market</div>
+
+                <div class="vendor-carousel-container" role="region" aria-label="Vendor logos carousel">
+                    <div class="vendor-carousel" role="img" aria-label="Rotating carousel of vendor logos"
+                        aria-describedby="carousel-instructions">
+                        <div class="vendor-carousel-track" id="vendor-track">
+                            <!-- Vendor logos will be dynamically loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Carousel Controls -->
+                    <div class="carousel-controls" role="group" aria-label="Carousel navigation controls">
+                        <button class="carousel-btn carousel-prev" aria-label="View previous vendor logos"
+                            aria-describedby="prev-btn-desc">
+                            <span class="carousel-arrow" aria-hidden="true">‹</span>
+                        </button>
+                        <button class="carousel-btn carousel-next" aria-label="View next vendor logos"
+                            aria-describedby="next-btn-desc">
+                            <span class="carousel-arrow" aria-hidden="true">›</span>
+                        </button>
+                    </div>
+
+
+
+                    <!-- Hidden descriptions for screen readers -->
+                    <div class="sr-only">
+                        <div id="carousel-instructions">Use the arrow buttons or swipe to navigate through vendor logos.
+                            Automatic rotation pauses when you interact with the carousel.</div>
+                        <div id="prev-btn-desc">Navigate to previous set of vendor logos</div>
+                        <div id="next-btn-desc">Navigate to next set of vendor logos</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -310,7 +363,8 @@
                             <div class="faq-item" role="group" aria-labelledby="family-question">
                                 <h4 id="family-question" class="faq-question">Are there facilities for families with
                                     children?</h4>
-                                <p class="faq-answer" aria-describedby="family-question">Absolutely! There will be a kids area in the gaming room along with a public outdoor
+                                <p class="faq-answer" aria-describedby="family-question">Absolutely! There will be a
+                                    kids area in the gaming room along with a public outdoor
                                     kids play area and on-site toilets. The event is family-friendly and welcomes all
                                     ages.</p>
                             </div>
@@ -449,6 +503,7 @@
                         <h4 class="sr-only">Quick Navigation Links</h4>
                         <a href="#hero" class="footer-link" aria-label="Return to top of page">Home</a>
                         <a href="#event-info" class="footer-link" aria-label="Go to event information section">Event</a>
+                        <a href="#vendor-logos" class="footer-link" aria-label="Go to vendor logos section">Vendors</a>
                         <a href="#venue-details" class="footer-link" aria-label="Go to venue details section">Venue</a>
                         <a href="#contact" class="footer-link" aria-label="Go to contact form section">Contact</a>
                     </nav>
@@ -480,6 +535,7 @@
     <script src="js/keyboard-navigation.js"></script>
     <script src="js/contact-form.js"></script>
     <script src="js/smooth-scroll.js"></script>
+    <script src="js/vendor-carousel.js"></script>
 
     <!-- Mobile Menu Fix - Ensures mobile navigation works -->
     <script src="js/mobile-menu-fix.js"></script>
