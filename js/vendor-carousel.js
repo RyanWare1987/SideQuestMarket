@@ -99,7 +99,7 @@ class VendorCarousel {
       'Steel Kill',
       'The Dice Cup',
       'Tiny Haunts Agency',
-      'Tabletop Emporium',
+      'Table Top Events',
       'Unrelenting Brush',
       'Valkyrie RPG',
       'Warlocks & Wicks'
