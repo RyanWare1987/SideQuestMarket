@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="css/accessibility.css">
     <link rel="stylesheet" href="css/animated-dice.css">
     <link rel="stylesheet" href="css/vendor-carousel.css">
+    <link rel="stylesheet" href="css/site-map.css">
 </head>
 
 <body>
@@ -250,9 +251,78 @@
                                 aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
                         </div>
                     </article>
+                    
+                    <!-- Site Map Card -->
+                    <article class="site-map-card" aria-labelledby="site-map-heading"
+                        aria-describedby="site-map-description">
+                        <div class="card-header">
+                            <div class="dice-decoration dice-purple critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="site-map-heading" class="card-heading">Event Layout</h3>
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                        <div class="site-map-container" id="site-map-container">
+                            <div class="site-map-image-wrapper">
+                                <img src="assets/EventMedia/SiteMap.png" 
+                                     alt="Event layout showing vendor locations in both rooms" 
+                                     class="site-map-image" 
+                                     id="site-map-image"
+                                     loading="lazy"
+                                     role="button"
+                                     tabindex="0"
+                                     aria-describedby="site-map-instructions">
+                            </div>
+                            <div class="site-map-disclaimer">
+                                <p><span class="disclaimer-asterisk">*</span> This layout is not to scale but represents where vendors will be located in each of the two rooms.</p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                        <div class="sr-only" id="site-map-description">Interactive site map showing the layout and vendor locations for the event</div>
+                        <div class="sr-only" id="site-map-instructions">Click or tap to view enlarged site map with zoom capabilities</div>
+                    </article>
                 </div>
             </div>
         </section>
+
+        <!-- Site Map Modal -->
+        <div id="site-map-modal" class="site-map-modal" role="dialog" aria-labelledby="modal-title" aria-describedby="modal-description" aria-hidden="true">
+            <div class="site-map-modal-overlay" aria-hidden="true"></div>
+            <div class="site-map-modal-content">
+                <div class="site-map-modal-header">
+                    <h2 id="modal-title" class="modal-title">Event Layout</h2>
+                    <button class="site-map-modal-close" aria-label="Close site map" id="close-modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="site-map-modal-body">
+                    <div class="site-map-zoom-container" id="zoom-container">
+                        <img src="assets/EventMedia/SiteMap.png" 
+                             alt="Event layout showing vendor locations in both rooms" 
+                             class="site-map-modal-image" 
+                             id="modal-site-map-image">
+                    </div>
+                    <div class="site-map-controls">
+                        <button class="zoom-btn zoom-in" id="zoom-in" aria-label="Zoom in">
+                            <span aria-hidden="true">+</span>
+                        </button>
+                        <button class="zoom-btn zoom-out" id="zoom-out" aria-label="Zoom out">
+                            <span aria-hidden="true">−</span>
+                        </button>
+                        <button class="zoom-btn zoom-reset" id="zoom-reset" aria-label="Reset zoom">
+                            <span aria-hidden="true">⌂</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="site-map-modal-footer">
+                    <p class="modal-disclaimer"><span class="disclaimer-asterisk">*</span> This layout is not to scale but represents where vendors will be located in each of the two rooms.</p>
+                </div>
+            </div>
+            <div class="sr-only" id="modal-description">Enlarged view of the event site map with zoom and pan capabilities</div>
+        </div>
 
         <!-- Vendor Logos Carousel Section -->
         <section id="vendor-logos" class="vendor-logos-section" aria-labelledby="vendor-logos-title"
@@ -536,6 +606,7 @@
     <script src="js/contact-form.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/vendor-carousel.js"></script>
+    <script src="js/site-map.js"></script>
 
     <!-- Mobile Menu Fix - Ensures mobile navigation works -->
     <script src="js/mobile-menu-fix.js"></script>

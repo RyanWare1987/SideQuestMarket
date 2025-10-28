@@ -870,6 +870,13 @@ body.loaded .site-header {
 
 @media (min-width: 1024px) {
   .event-details-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .event-details-grid {
     gap: var(--space-12);
   }
 }
