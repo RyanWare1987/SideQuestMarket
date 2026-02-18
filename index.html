@@ -26,6 +26,27 @@
 
     <title>Side Quest Market - Alternative Gaming Market | Saturday 2nd & Sunday 3rd May 2026</title>
 
+    <style>
+        /* Prevent layout shifts during page load */
+        html {
+            scroll-behavior: auto !important;
+        }
+        
+        body {
+            overflow-anchor: none;
+        }
+        
+        /* Ensure page starts at top */
+        html, body {
+            scroll-behavior: auto !important;
+        }
+        
+        /* Prevent focus outline during page load */
+        .page-loading *:focus {
+            outline: none !important;
+        }
+    </style>
+
     <!-- Font preloading for performance -->
     <link rel="preload" href="fonts/Aurora.otf" as="font" type="font/otf" crossorigin="anonymous">
 
@@ -42,6 +63,7 @@
     <link rel="stylesheet" href="css/animated-dice.css">
     <link rel="stylesheet" href="css/vendor-carousel.css">
     <link rel="stylesheet" href="css/site-map.css">
+    <link rel="stylesheet" href="css/photo-gallery.css">
 </head>
 
 <body>
@@ -360,6 +382,55 @@
             </div>
         </section>
 
+        <!-- Photo Gallery Section -->
+        <section class="photo-gallery-section" aria-labelledby="photo-gallery-title" aria-describedby="photo-gallery-description">
+            <div class="photo-gallery-container">
+                <div class="photo-gallery-header">
+                    <h2 id="photo-gallery-title" class="photo-gallery-title">Memories from 2025</h2>
+                    <p class="photo-gallery-subtitle">Photos from our very first Side Quest Market</p>
+                    <p id="photo-gallery-description" class="photo-gallery-description">
+                        Take a look back at the amazing atmosphere and community spirit from our inaugural event in November 2025. 
+                        These photos capture the excitement, creativity, and joy that made our first market so special. 
+                        Get ready for even more of the same magic at our upcoming weekend event in May 2026!
+                    </p>
+                </div>
+
+                <div class="photo-carousel-wrapper" role="region" aria-label="Photo gallery carousel">
+                    <div class="photo-carousel" aria-live="polite" aria-atomic="false">
+                        <div class="photo-carousel-track" id="photo-track">
+                            <!-- Photos will be dynamically loaded here -->
+                        </div>
+                        
+                        <!-- Navigation buttons -->
+                        <button class="photo-nav-btn photo-nav-prev" id="photo-prev" 
+                                aria-label="View previous photo" aria-describedby="photo-prev-desc">
+                            <span aria-hidden="true">‹</span>
+                        </button>
+                        <button class="photo-nav-btn photo-nav-next" id="photo-next" 
+                                aria-label="View next photo" aria-describedby="photo-next-desc">
+                            <span aria-hidden="true">›</span>
+                        </button>
+
+                        <!-- Photo counter -->
+                        <div class="photo-counter" id="photo-counter" aria-label="Photo counter">
+                            1 / 19
+                        </div>
+                    </div>
+
+                    <!-- Photo indicators -->
+                    <div class="photo-indicators" id="photo-indicators" role="group" aria-label="Photo navigation dots">
+                        <!-- Indicators will be dynamically created -->
+                    </div>
+                </div>
+
+                <!-- Hidden descriptions for screen readers -->
+                <div class="sr-only">
+                    <div id="photo-prev-desc">Navigate to the previous photo in the gallery</div>
+                    <div id="photo-next-desc">Navigate to the next photo in the gallery</div>
+                </div>
+            </div>
+        </section>
+
         <!-- Venue Details Section -->
         <section id="venue-details" class="venue-details-section" aria-labelledby="venue-details-title"
             aria-describedby="venue-details-description">
@@ -591,6 +662,81 @@
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
     <!-- JavaScript Files -->
+    <script>
+        // Comprehensive page load position fix
+        (function() {
+            // Add loading class to body
+            document.documentElement.classList.add('page-loading');
+            
+            // Prevent scroll restoration
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            
+            // Clear any hash that might cause scrolling
+            if (window.location.hash) {
+                // Store the hash for later use if needed
+                const originalHash = window.location.hash;
+                // Remove hash without triggering scroll
+                history.replaceState(null, null, window.location.pathname + window.location.search);
+            }
+            
+            // Force scroll to top immediately
+            window.scrollTo(0, 0);
+            document.documentElement.scrollTop = 0;
+            document.body.scrollTop = 0;
+            
+            // Prevent any focus-related scrolling during page load
+            let isPageLoading = true;
+            
+            // Override focus method temporarily during page load
+            const originalFocus = HTMLElement.prototype.focus;
+            HTMLElement.prototype.focus = function(options) {
+                if (isPageLoading) {
+                    // Prevent focus during page load that might cause scrolling
+                    return;
+                }
+                return originalFocus.call(this, options);
+            };
+            
+            // Restore normal focus behavior after page is fully loaded
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    isPageLoading = false;
+                    HTMLElement.prototype.focus = originalFocus;
+                    document.documentElement.classList.remove('page-loading');
+                    
+                    // Final scroll to top after everything is loaded
+                    window.scrollTo(0, 0);
+                }, 100);
+            });
+            
+            // Also handle DOMContentLoaded
+            document.addEventListener('DOMContentLoaded', function() {
+                window.scrollTo(0, 0);
+            });
+            
+            // Backup scroll to top on any scroll event during loading
+            let scrollTimeout;
+            const preventScrollDuringLoad = function() {
+                if (isPageLoading) {
+                    clearTimeout(scrollTimeout);
+                    scrollTimeout = setTimeout(function() {
+                        window.scrollTo(0, 0);
+                    }, 10);
+                }
+            };
+            
+            window.addEventListener('scroll', preventScrollDuringLoad, { passive: true });
+            
+            // Remove scroll listener after page loads
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    window.removeEventListener('scroll', preventScrollDuringLoad);
+                }, 200);
+            });
+        })();
+    </script>
     <script src="js/font-loader.js"></script>
     <script src="js/image-lazy-loading.js"></script>
     <script src="js/simple-dark-mode.js"></script>
@@ -602,6 +748,7 @@
     <script src="js/smooth-scroll.js"></script>
     <script src="js/vendor-carousel.js"></script>
     <script src="js/site-map.js"></script>
+    <script src="js/photo-gallery.js"></script>
 
     <!-- Mobile Menu Fix - Ensures mobile navigation works -->
     <script src="js/mobile-menu-fix.js"></script>
