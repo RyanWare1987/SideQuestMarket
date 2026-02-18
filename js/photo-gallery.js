@@ -51,7 +51,7 @@ class PhotoGallery {
             slide.setAttribute('data-slide', index);
 
             const img = document.createElement('img');
-            img.src = `assets/MarketPhotos_2025/${photo}`;
+            img.src = `assets/MarketPhotos_2025_optimized/${photo}`;
             img.alt = `Photo from The Side Quest Market 2025 - Image ${index + 1}`;
             img.loading = index === 0 ? 'eager' : 'lazy';
             img.setAttribute('tabindex', '-1'); // Remove from tab order to prevent focus issues
