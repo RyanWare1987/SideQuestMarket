@@ -24,6 +24,8 @@ class Navigation {
     this.setupFocusManagement();
   }
 
+
+
   bindEvents() {
     // Mobile menu toggle
     if (this.mobileMenuToggle) {
