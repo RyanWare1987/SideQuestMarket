@@ -1,0 +1,505 @@
+/* Future Events Page Styles */
+
+/* Page Header Section */
+.page-header-section {
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, 
+        rgba(108, 46, 145, 0.9) 0%, 
+        rgba(0, 0, 0, 0.8) 100%);
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+}
+
+.page-header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.page-title {
+    font-size: 3rem;
+    font-family: 'Aurora', serif;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.page-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.95;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.page-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Future Events Section */
+.future-events-section {
+    padding: 4rem 0;
+    background: var(--bg-color);
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+/* Event Cards */
+.event-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(108, 46, 145, 0.1);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.event-card-header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.event-card-title {
+    font-size: 1.8rem;
+    font-family: 'Aurora', serif;
+    margin: 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.event-card-content {
+    padding: 2rem;
+}
+
+.event-date-badge {
+    background: linear-gradient(135deg, 
+        rgba(108, 46, 145, 0.95) 0%, 
+        rgba(0, 0, 0, 0.9) 100%);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(108, 46, 145, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.event-details {
+    margin-bottom: 1.5rem;
+}
+
+.event-type {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.event-venue {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.event-pricing {
+    background: rgba(108, 46, 145, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.price-label {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.price-value {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.price-note {
+    font-size: 0.9rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.event-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.event-card-footer {
+    padding: 0 2rem 2rem;
+    text-align: center;
+}
+
+.event-cta-btn {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(108, 46, 145, 0.3);
+}
+
+.event-cta-btn:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 46, 145, 0.4);
+}
+
+.event-cta-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: linear-gradient(135deg, 
+        rgba(108, 46, 145, 0.9) 0%, 
+        rgba(0, 0, 0, 0.8) 100%);
+    color: white;
+    padding: 3rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.newsletter-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+}
+
+.newsletter-content {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-title {
+    font-size: 2rem;
+    font-family: 'Aurora', serif;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+.newsletter-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.newsletter-btn {
+    background: white;
+    color: #1a1a1a;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    color: #1a1a1a;
+    text-decoration: none;
+}
+
+.newsletter-note {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    opacity: 0.8;
+}
+
+/* Dice Decorations */
+.dice-decoration {
+    width: 30px;
+    height: 30px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    flex-shrink: 0;
+}
+
+/* Active Navigation State */
+.nav-link.active,
+.mobile-nav-link.active {
+    color: var(--accent-color) !important;
+    font-weight: 600;
+}
+
+.nav-link.active::after,
+.mobile-nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 3px;
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .page-header-section {
+        padding: 4rem 0 3rem;
+    }
+    
+    .page-title {
+        font-size: 2.2rem;
+    }
+    
+    .page-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .page-description {
+        font-size: 1rem;
+    }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+    
+    .event-card-header {
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .event-card-title {
+        font-size: 1.5rem;
+    }
+    
+    .event-card-content {
+        padding: 1.5rem;
+    }
+    
+    .newsletter-section {
+        padding: 2rem;
+        margin-top: 3rem;
+    }
+    
+    .newsletter-title {
+        font-size: 1.6rem;
+    }
+    
+    .dice-decoration {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header-content {
+        padding: 0 1rem;
+    }
+    
+    .page-title {
+        font-size: 1.8rem;
+    }
+    
+    .events-grid {
+        gap: 1.5rem;
+    }
+    
+    .event-card-content {
+        padding: 1rem;
+    }
+    
+    .event-card-header {
+        padding: 1rem;
+    }
+    
+    .newsletter-section {
+        padding: 1.5rem;
+    }
+    
+    .price-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.2rem;
+    }
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+    .event-card {
+        border-color: rgba(244, 208, 63, 0.2);
+    }
+    
+    .event-pricing {
+        background: rgba(244, 208, 63, 0.1);
+    }
+}
+
+/* Dark Mode Improvements */
+body.dark-mode {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 50%, #2d2d2d 100%);
+    color: #e0e0e0;
+}
+
+/* Dark mode section backgrounds */
+body.dark-mode .future-events-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 50%, #333333 100%);
+}
+
+/* Dark mode event cards - matching main site style */
+body.dark-mode .event-card {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    color: #f0f0f0;
+    border-color: #555555;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(107, 70, 193, 0.1);
+}
+
+body.dark-mode .event-card:hover {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(107, 70, 193, 0.15);
+}
+
+/* Dark mode card titles - matching main site */
+body.dark-mode .event-card-title {
+    color: var(--color-accent-gold);
+}
+
+/* Dark mode card content */
+body.dark-mode .event-type {
+    color: var(--color-accent-gold);
+}
+
+body.dark-mode .event-venue,
+body.dark-mode .event-description p {
+    color: #d0d0d0;
+}
+
+/* Dark mode pricing section */
+body.dark-mode .event-pricing {
+    background: rgba(255, 255, 255, 0.05);
+    border-left-color: var(--color-accent-gold);
+}
+
+body.dark-mode .price-label {
+    color: #f0f0f0;
+    font-weight: 600;
+}
+
+body.dark-mode .price-value {
+    color: var(--color-accent-gold);
+}
+
+body.dark-mode .price-note {
+    color: var(--color-accent-gold);
+}
+
+/* Dark mode buttons */
+body.dark-mode .event-cta-btn:disabled {
+    background: rgba(255, 255, 255, 0.1);
+    color: #999999;
+    border: 1px solid #555555;
+}
+
+/* Dark mode page header */
+body.dark-mode .page-header-section {
+    background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 50%, #333333 100%);
+}
+
+body.dark-mode .page-title {
+    color: var(--color-accent-gold);
+}
+
+body.dark-mode .page-subtitle,
+body.dark-mode .page-description {
+    color: #d0d0d0;
+}
+
+/* Dark mode newsletter section */
+body.dark-mode .newsletter-section {
+    background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+    border: 2px solid #555555;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(107, 70, 193, 0.1);
+}
+
+body.dark-mode .newsletter-title {
+    color: var(--color-accent-gold);
+}
+
+body.dark-mode .newsletter-description,
+body.dark-mode .newsletter-note {
+    color: #d0d0d0;
+}
