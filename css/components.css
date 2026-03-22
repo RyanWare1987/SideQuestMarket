@@ -153,6 +153,16 @@ body.dark-mode .dark-mode-toggle {
   box-shadow: 0 0 0 2px var(--color-primary-purple);
 }
 
+/* Override visited link styling for navigation links */
+.nav-link:visited {
+  color: var(--color-pure-white);
+}
+
+.nav-link:visited:hover,
+.nav-link:visited:focus {
+  color: var(--color-light-purple);
+}
+
 /* Active navigation link indicator */
 .nav-link.active {
   color: var(--color-primary-purple);
@@ -168,6 +178,26 @@ body.dark-mode .dark-mode-toggle {
   height: 2px;
   background-color: var(--color-primary-purple);
   border-radius: 1px;
+}
+
+/* Ensure active state takes precedence over visited state */
+.nav-link.active:visited {
+  color: var(--color-primary-purple) !important;
+}
+
+.nav-link.active:visited::after {
+  background-color: var(--color-primary-purple) !important;
+}
+
+/* Specific override for Future Events link */
+.nav-link[href="future-events.html"].active,
+.nav-link[href="future-events.html"].active:visited {
+  color: var(--color-primary-purple) !important;
+}
+
+.nav-link[href="future-events.html"].active::after,
+.nav-link[href="future-events.html"].active:visited::after {
+  background-color: var(--color-primary-purple) !important;
 }
 
 /* Mobile Menu Toggle Button */
@@ -309,6 +339,39 @@ body.dark-mode .dark-mode-toggle {
   color: var(--color-primary-purple);
   background-color: rgba(107, 70, 193, 0.1);
   border-left-color: var(--color-primary-purple);
+}
+
+/* Override visited link styling for mobile navigation links */
+.mobile-nav-link:visited {
+  color: var(--color-pure-white);
+}
+
+.mobile-nav-link:visited:hover,
+.mobile-nav-link:visited:focus {
+  color: var(--color-light-purple);
+  background-color: rgba(107, 70, 193, 0.1);
+  border-left-color: var(--color-primary-purple);
+}
+
+.mobile-nav-link:visited.active {
+  color: var(--color-primary-purple);
+  background-color: rgba(107, 70, 193, 0.1);
+  border-left-color: var(--color-primary-purple);
+}
+
+/* Ensure mobile active state takes precedence over visited state */
+.mobile-nav-link.active:visited {
+  color: var(--color-primary-purple) !important;
+  background-color: rgba(107, 70, 193, 0.1) !important;
+  border-left-color: var(--color-primary-purple) !important;
+}
+
+/* Specific override for Future Events mobile link */
+.mobile-nav-link[href="future-events.html"].active,
+.mobile-nav-link[href="future-events.html"].active:visited {
+  color: var(--color-primary-purple) !important;
+  background-color: rgba(107, 70, 193, 0.1) !important;
+  border-left-color: var(--color-primary-purple) !important;
 }
 
 /* Mobile Menu Overlay */
