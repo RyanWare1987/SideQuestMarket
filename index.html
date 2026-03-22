@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="css/vendor-carousel.css">
     <link rel="stylesheet" href="css/site-map.css">
     <link rel="stylesheet" href="css/photo-gallery.css">
+    <link rel="stylesheet" href="css/workshops.css">
 </head>
 
 <body>
@@ -90,6 +91,10 @@
                             aria-describedby="nav-vendors-desc">Vendors</a>
                     </li>
                     <li role="none">
+                        <a href="#workshops" role="menuitem" class="nav-link"
+                            aria-describedby="nav-workshops-desc">Workshops</a>
+                    </li>
+                    <li role="none">
                         <a href="#venue-details" role="menuitem" class="nav-link"
                             aria-describedby="nav-venue-desc">Venue</a>
                     </li>
@@ -108,6 +113,7 @@
                     <div id="nav-home-desc">Navigate to top of page and event overview</div>
                     <div id="nav-event-desc">Navigate to event details and information</div>
                     <div id="nav-vendors-desc">Navigate to vendor logos carousel section</div>
+                    <div id="nav-workshops-desc">Navigate to workshops and activities section</div>
                     <div id="nav-venue-desc">Navigate to venue accessibility and amenities information</div>
                     <div id="nav-future-desc">Navigate to future events page</div>
                     <div id="nav-contact-desc">Navigate to contact form</div>
@@ -148,6 +154,10 @@
                                 aria-describedby="mobile-nav-vendors-desc">Vendors</a>
                         </li>
                         <li role="none">
+                            <a href="#workshops" role="menuitem" class="mobile-nav-link"
+                                aria-describedby="mobile-nav-workshops-desc">Workshops</a>
+                        </li>
+                        <li role="none">
                             <a href="#venue-details" role="menuitem" class="mobile-nav-link"
                                 aria-describedby="mobile-nav-venue-desc">Venue</a>
                         </li>
@@ -166,6 +176,7 @@
                         <div id="mobile-nav-home-desc">Return to top of page</div>
                         <div id="mobile-nav-event-desc">View event date, time, and location details</div>
                         <div id="mobile-nav-vendors-desc">View vendor logos carousel</div>
+                        <div id="mobile-nav-workshops-desc">View workshops and activities information</div>
                         <div id="mobile-nav-venue-desc">View venue accessibility and facilities information</div>
                         <div id="mobile-nav-future-desc">View upcoming events page</div>
                         <div id="mobile-nav-contact-desc">Access contact form to send message</div>
@@ -388,6 +399,229 @@
                         <div id="prev-btn-desc">Navigate to previous set of vendor logos</div>
                         <div id="next-btn-desc">Navigate to next set of vendor logos</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshops Section -->
+        <section id="workshops" class="workshops-section" aria-labelledby="workshops-title"
+            aria-describedby="workshops-description">
+            <div class="container">
+                <h2 id="workshops-title" class="section-heading">Workshops</h2>
+                <p id="workshops-description" class="workshops-intro">
+                    Join us for exciting hands-on workshops throughout the weekend! From RPG adventures to miniature painting, 
+                    there's something for everyone. Most workshops are free with donations welcome.
+                </p>
+
+                <div class="workshops-grid" role="group" aria-label="Available workshops">
+                    
+                    <!-- Workshop 1: The Hanged Dragon - Kids RPG -->
+                    <article class="workshop-card" aria-labelledby="workshop-1-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-purple" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="workshop-1-title" class="workshop-title">Kids RPG Adventure</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">10am Saturday & Sunday</div>
+                                <div class="workshop-age">Under 14s</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Kids-focused RPG (D&D style)</div>
+                                <div class="workshop-duration">Duration: 1 Hour</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                                <span class="workshop-donations">Donations welcome</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/HangedDragon.png" 
+                                 alt="Hanged Dragon" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 2: The Hanged Dragon - Adult RPG -->
+                    <article class="workshop-card" aria-labelledby="workshop-2-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-alt" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-02.png"></div>
+                            <h3 id="workshop-2-title" class="workshop-title">Adult RPG Adventure</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">1pm Saturday & Sunday</div>
+                                <div class="workshop-age">Over 14s</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Adults-focused RPG (D&D style)</div>
+                                <div class="workshop-duration">Duration: 1.5 to 2 Hours</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                                <span class="workshop-donations">Donations welcome</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/HangedDragon.png" 
+                                 alt="Hanged Dragon" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 3: The Unrelenting Hobby - Miniature Painting -->
+                    <article class="workshop-card" aria-labelledby="workshop-3-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-purple" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="workshop-3-title" class="workshop-title">Miniature Painting</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">10am & 1pm Sat, 10am Sun</div>
+                                <div class="workshop-age">All Ages</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Miniature painting workshops + drop-in sessions all day</div>
+                                <div class="workshop-duration">Duration: 45 Minutes</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                                <span class="workshop-donations">Donations welcome</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/UnrelentingBrush.png" 
+                                 alt="Unrelenting Brush" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 4: Bard Shots - Vampires the Masquerade -->
+                    <article class="workshop-card" aria-labelledby="workshop-4-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-alt" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-02.png"></div>
+                            <h3 id="workshop-4-title" class="workshop-title">Vampires the Masquerade</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">10am & 1pm Sat, 10am Sun</div>
+                                <div class="workshop-age">All Ages</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">RPG Game - 6 people per game</div>
+                                <div class="workshop-duration">Duration: 2.5 Hours</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                                <span class="workshop-donations">Donations welcome</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/BardShots.png" 
+                                 alt="Bard Shots" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 5: Bull & Compass - Leathercraft -->
+                    <article class="workshop-card workshop-card-second-row" aria-labelledby="workshop-5-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-purple" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="workshop-5-title" class="workshop-title">Leathercraft Workshop</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">11am Saturday</div>
+                                <div class="workshop-age">Under 13s need adult</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Hands-on leathercraft workshop</div>
+                                <div class="workshop-duration">Duration: 45 Minutes</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price paid">£15 per person</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/Bull_and_Compass.png" 
+                                 alt="Bull & Compass" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 6: Bull & Compass - World Building -->
+                    <article class="workshop-card workshop-card-second-row" aria-labelledby="workshop-6-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-alt" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-02.png"></div>
+                            <h3 id="workshop-6-title" class="workshop-title">World Building Masterclass</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">11am Sunday</div>
+                                <div class="workshop-age">All Ages</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Learn world building techniques</div>
+                                <div class="workshop-duration">Duration: 45 Minutes</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                                <span class="workshop-donations">Donations welcome</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/Bull_and_Compass.png" 
+                                 alt="Bull & Compass" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
+
+                    <!-- Workshop 7: Nintendo Nottingham - Gaming Sessions -->
+                    <article class="workshop-card workshop-card-second-row" aria-labelledby="workshop-7-title">
+                        <div class="workshop-card-header">
+                            <div class="dice-decoration dice-purple" role="img" aria-label="Decorative gaming dice"
+                                data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="workshop-7-title" class="workshop-title">Mario Kart & Gaming</h3>
+                        </div>
+                        
+                        <div class="workshop-card-content">
+                            <div class="workshop-schedule">
+                                <div class="workshop-time">All Day Both Days</div>
+                                <div class="workshop-age">All Ages</div>
+                            </div>
+                            
+                            <div class="workshop-details">
+                                <div class="workshop-description">Drop-in Mario Kart & gaming sessions</div>
+                                <div class="workshop-duration">Drop-in anytime</div>
+                            </div>
+                            
+                            <div class="workshop-pricing">
+                                <span class="workshop-price">Free</span>
+                            </div>
+                            
+                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/NintendoNottingham.png" 
+                                 alt="Nintendo Nottingham" 
+                                 class="workshop-vendor-logo">
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>

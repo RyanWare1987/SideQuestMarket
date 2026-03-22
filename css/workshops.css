@@ -1,0 +1,431 @@
+/**
+ * Workshops Section Styles
+ * 4+3 layout with vendor logos and improved dark mode
+ */
+
+/* Workshops Section */
+.workshops-section {
+  padding: 4rem 0;
+  background: var(--color-background-light);
+  position: relative;
+}
+
+.workshops-intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+/* Workshops Grid - 4+3 Layout */
+.workshops-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+/* Second row with 3 cards centered */
+.workshop-card-second-row {
+  grid-column: span 1;
+}
+
+.workshop-card-second-row:first-of-type {
+  grid-column: 1 / 2;
+}
+
+.workshop-card-second-row:nth-of-type(2) {
+  grid-column: 2 / 3;
+}
+
+.workshop-card-second-row:nth-of-type(3) {
+  grid-column: 3 / 4;
+}
+
+/* Workshop Cards */
+.workshop-card {
+  background: var(--color-background-white);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.workshop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  border-color: var(--color-primary-purple);
+}
+
+/* Workshop Card Header */
+.workshop-card-header {
+  background: linear-gradient(135deg, var(--color-primary-purple) 0%, var(--color-secondary-purple) 100%);
+  color: white;
+  padding: 1.5rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 80px;
+}
+
+.workshop-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0;
+  flex: 1;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  padding: 0 1rem; /* Add padding to prevent overlap */
+}
+
+/* Workshop Vendor Logo - Bottom right of card */
+.workshop-vendor-logo {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 6px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Vendor Text Styling - for cards without logos */
+.workshop-vendor-text {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  text-align: right;
+  flex-shrink: 0;
+  max-width: 80px;
+  line-height: 1.2;
+}
+
+/* Dice Decorations in Header */
+.workshop-card-header .dice-decoration {
+  width: 32px;
+  height: 32px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+/* Workshop Card Content */
+.workshop-card-content {
+  padding: 1.5rem;
+  position: relative; /* Add relative positioning for logo placement */
+}
+
+/* Workshop Schedule */
+.workshop-schedule {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border-light);
+}
+
+.workshop-time {
+  font-weight: 600;
+  color: var(--color-primary-purple);
+  font-size: 0.9rem;
+}
+
+.workshop-age {
+  background: var(--color-accent-gold);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Workshop Details */
+.workshop-details {
+  margin-bottom: 1rem;
+}
+
+.workshop-description {
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+
+.workshop-duration {
+  font-size: 0.8rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Workshop Pricing */
+.workshop-pricing {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.workshop-price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--color-primary-purple);
+}
+
+.workshop-price.paid {
+  color: var(--color-accent-gold);
+}
+
+.workshop-donations {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  font-style: italic;
+}
+
+/* Dark Mode Styles - Following site pattern */
+body.dark-mode .workshops-section {
+  background: linear-gradient(135deg, #2a2a2a 0%, #1e1e1e 50%, #333333 100%);
+}
+
+body.dark-mode .workshop-card {
+  background: linear-gradient(135deg, #3a3a3a 0%, #2d2d2d 100%);
+  color: #f0f0f0;
+  border-color: #555555;
+}
+
+body.dark-mode .workshop-card:hover {
+  border-color: var(--color-primary-purple);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 25px rgba(107, 70, 193, 0.15);
+}
+
+body.dark-mode .workshop-title {
+  color: var(--color-accent-gold);
+}
+
+body.dark-mode .workshop-vendor-text {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+body.dark-mode .workshop-description {
+  color: #d0d0d0;
+}
+
+body.dark-mode .workshop-duration,
+body.dark-mode .workshop-donations {
+  color: #b0b0b0;
+}
+
+body.dark-mode .workshop-schedule {
+  border-bottom-color: #555555;
+}
+
+body.dark-mode .workshops-intro {
+  color: #d0d0d0;
+}
+
+body.dark-mode .workshop-time {
+  color: var(--color-accent-gold);
+}
+
+body.dark-mode .workshop-price {
+  color: var(--color-accent-gold);
+}
+
+body.dark-mode .workshop-price.paid {
+  color: var(--color-accent-gold);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .workshops-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .workshop-card-second-row:first-of-type {
+    grid-column: 1 / 2;
+  }
+
+  .workshop-card-second-row:nth-of-type(2) {
+    grid-column: 2 / 3;
+  }
+
+  .workshop-card-second-row:nth-of-type(3) {
+    grid-column: 3 / 4;
+  }
+}
+
+@media (max-width: 900px) {
+  .workshops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .workshop-card-second-row {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .workshops-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .workshop-card {
+    margin: 0 1rem;
+  }
+  
+  .workshop-card-second-row {
+    grid-column: span 1;
+  }
+  
+  .workshop-card-header {
+    padding: 1.25rem;
+    min-height: 70px;
+  }
+  
+  .workshop-title {
+    font-size: 1.1rem;
+  }
+  
+  .workshop-card-content {
+    padding: 1.25rem;
+    padding-right: 80px; /* Reduced from 90px to give more space for schedule */
+  }
+  
+  .workshop-schedule {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .workshop-time {
+    flex: 1;
+    font-size: 0.85rem; /* Slightly smaller on mobile */
+  }
+  
+  .workshop-age {
+    align-self: center;
+    flex-shrink: 0; /* Prevent age badge from shrinking */
+    font-size: 0.75rem; /* Smaller text for more compact badge */
+    padding: 0.2rem 0.6rem; /* More compact padding */
+  }
+  
+  /* Larger logos for tablet/mobile */
+  .workshop-vendor-logo {
+    width: 70px;
+    height: 70px;
+    bottom: 15px;
+    right: 15px;
+    padding: 5px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .workshops-section {
+    padding: 3rem 0;
+  }
+  
+  .workshops-intro {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .workshop-card {
+    margin: 0 0.5rem;
+  }
+  
+  .workshop-card-header {
+    padding: 1rem;
+    min-height: auto;
+  }
+  
+  .workshop-card-header .dice-decoration {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .workshop-vendor-logo {
+    width: 70px;
+    height: 70px;
+    bottom: 15px;
+    right: 15px;
+    padding: 5px;
+    border-radius: 8px;
+  }
+  
+  .workshop-title {
+    font-size: 1rem;
+  }
+  
+  .workshop-card-content {
+    padding: 1rem;
+    padding-right: 80px; /* Reduced from 90px to give more space for schedule */
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .workshop-card {
+    transition: none;
+  }
+  
+  .workshop-card:hover {
+    transform: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .workshop-card {
+    border: 2px solid var(--color-text-primary);
+  }
+  
+  .workshop-age {
+    border: 1px solid var(--color-text-primary);
+  }
+}
+
+/* Print Styles */
+@media print {
+  .workshops-section {
+    background: white !important;
+    padding: 2rem 0;
+  }
+  
+  .workshop-card {
+    background: white !important;
+    border: 1px solid #000;
+    box-shadow: none !important;
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+  
+  .workshop-card-header {
+    background: #f0f0f0 !important;
+    color: #000 !important;
+  }
+  
+  .workshop-card-header .dice-decoration {
+    display: none;
+  }
+  
+  .vendor-logo {
+    filter: grayscale(100%);
+  }
+}
