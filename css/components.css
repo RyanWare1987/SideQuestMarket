@@ -919,6 +919,7 @@ body.loaded .site-header {
 /* Event Details Grid */
 .event-details-grid {
   display: grid;
+  grid-template-columns: 1fr;
   gap: var(--space-6);
   max-width: var(--container-lg);
   margin: 0 auto;
@@ -926,14 +927,14 @@ body.loaded .site-header {
 
 @media (min-width: 768px) {
   .event-details-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-8);
   }
 }
 
 @media (min-width: 1024px) {
   .event-details-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--space-6);
   }
 }
