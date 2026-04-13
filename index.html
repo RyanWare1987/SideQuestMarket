@@ -64,6 +64,7 @@
     <link rel="stylesheet" href="css/vendor-carousel.css">
     <link rel="stylesheet" href="css/site-map.css">
     <link rel="stylesheet" href="css/photo-gallery.css">
+    <link rel="stylesheet" href="css/competition.css">
     <link rel="stylesheet" href="css/workshops.css">
 </head>
 
@@ -83,12 +84,12 @@
                         <a href="#hero" role="menuitem" class="nav-link" aria-describedby="nav-home-desc">Home</a>
                     </li>
                     <li role="none">
-                        <a href="#event-info" role="menuitem" class="nav-link"
-                            aria-describedby="nav-event-desc">Event</a>
-                    </li>
-                    <li role="none">
                         <a href="#vendor-logos" role="menuitem" class="nav-link"
                             aria-describedby="nav-vendors-desc">Vendors</a>
+                    </li>
+                    <li role="none">
+                        <a href="#competition" role="menuitem" class="nav-link"
+                            aria-describedby="nav-competition-desc">Competition</a>
                     </li>
                     <li role="none">
                         <a href="#workshops" role="menuitem" class="nav-link"
@@ -111,8 +112,8 @@
                 <!-- Hidden descriptions for screen readers -->
                 <div class="sr-only">
                     <div id="nav-home-desc">Navigate to top of page and event overview</div>
-                    <div id="nav-event-desc">Navigate to event details and information</div>
                     <div id="nav-vendors-desc">Navigate to vendor logos carousel section</div>
+                    <div id="nav-competition-desc">Navigate to miniature painting competition section</div>
                     <div id="nav-workshops-desc">Navigate to workshops and activities section</div>
                     <div id="nav-venue-desc">Navigate to venue accessibility and amenities information</div>
                     <div id="nav-future-desc">Navigate to future events page</div>
@@ -146,12 +147,12 @@
                                 aria-describedby="mobile-nav-home-desc">Home</a>
                         </li>
                         <li role="none">
-                            <a href="#event-info" role="menuitem" class="mobile-nav-link"
-                                aria-describedby="mobile-nav-event-desc">Event</a>
-                        </li>
-                        <li role="none">
                             <a href="#vendor-logos" role="menuitem" class="mobile-nav-link"
                                 aria-describedby="mobile-nav-vendors-desc">Vendors</a>
+                        </li>
+                        <li role="none">
+                            <a href="#competition" role="menuitem" class="mobile-nav-link"
+                                aria-describedby="mobile-nav-competition-desc">Competition</a>
                         </li>
                         <li role="none">
                             <a href="#workshops" role="menuitem" class="mobile-nav-link"
@@ -174,8 +175,8 @@
                     <!-- Hidden descriptions for mobile navigation -->
                     <div class="sr-only">
                         <div id="mobile-nav-home-desc">Return to top of page</div>
-                        <div id="mobile-nav-event-desc">View event date, time, and location details</div>
                         <div id="mobile-nav-vendors-desc">View vendor logos carousel</div>
+                        <div id="mobile-nav-competition-desc">View miniature painting competition information</div>
                         <div id="mobile-nav-workshops-desc">View workshops and activities information</div>
                         <div id="mobile-nav-venue-desc">View venue accessibility and facilities information</div>
                         <div id="mobile-nav-future-desc">View upcoming events page</div>
@@ -249,14 +250,14 @@
                             </div>
                             <div class="detail-item">
                                 <dt class="detail-label">Time:</dt>
-                                <dd class="detail-value" aria-label="Event time is 10:00 AM to 3:00 PM">10:00 - 15:00
+                                <dd class="detail-value" aria-label="Event time is Saturday 10:00 AM to 4:00 PM, Sunday 10:00 AM to 3:00 PM">Saturday: 10:00 - 16:00<br>Sunday: 10:00 - 15:00
                                 </dd>
                             </div>
                             <div class="detail-item">
                                 <dt class="detail-label">Venue:</dt>
                                 <dd class="detail-value"
                                     aria-label="Event location is Greasley Sports Centre, Eastwood, Nottingham">Greasley
-                                    Sports Centre, Eastwood, Nottingham</dd>
+                                    Sports Centre, Eastwood, Nottingham, NG16 3QN</dd>
                             </div>
                         </dl>
                         <div class="card-footer">
@@ -279,9 +280,6 @@
                             <div class="faq-item">
                                 <p>Back for the 2nd time, The Side Quest Market will now be running throughout the weekend.
                                     This family friendly event can offer a wide shopping experience with 40 vendors. Activities and workshops running throughout the weekend, including D&D workshops, Vampires of Masquarade and miniatures painting workshops.</p>
-                            </div>
-                            <div class="faq-item">
-                                <p>For the first time we will be running a Mini's painting competition that will be judged on the Sunday keep a eye on the socials to see what categories we will be running.</p>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -399,6 +397,105 @@
                         <div id="prev-btn-desc">Navigate to previous set of vendor logos</div>
                         <div id="next-btn-desc">Navigate to next set of vendor logos</div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competition Section -->
+        <section id="competition" class="competition-section" aria-labelledby="competition-title"
+            aria-describedby="competition-description">
+            <div class="container">
+                <h2 id="competition-title" class="section-heading">Miniature Painting Competition</h2>
+                <p id="competition-description" class="competition-intro">
+                    Join us for the Side Quest Market Miniature Painting Competition over the weekend of 2nd and 3rd May 2026! 
+                    We encourage painters of all skill levels and ages to take part. You can even paint a model at one of our 
+                    paint-and-take stands on the weekend to submit if you wish.
+                </p>
+
+                <div class="competition-grid" role="group" aria-label="Competition information">
+                    
+                    <!-- Rules Card -->
+                    <article class="competition-card rules-card" aria-labelledby="rules-heading">
+                        <div class="card-header">
+                            <div class="dice-decoration dice-purple critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="rules-heading" class="card-heading">Rules</h3>
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <ul class="rules-list">
+                                <li><strong>Free Entry:</strong> It is free for anyone to enter</li>
+                                <li><strong>Submission Deadline:</strong> All entries must be submitted by 12 midday Sunday</li>
+                                <li><strong>Judging:</strong> Judging will take place at 13:30 Sunday</li>
+                                <li><strong>Categories:</strong> There will be 4 categories and you can enter 1 or up to all 4 if you wish!</li>
+                            </ul>
+                            
+                            <div class="categories-grid">
+                                <div class="category-item">Fantasy</div>
+                                <div class="category-item">Historical</div>
+                                <div class="category-item">Diorama</div>
+                                <div class="category-item">Vehicle</div>
+                            </div>
+                            
+                            <p class="squad-rule"><strong>Squad Entries:</strong> Any squads entered must be 10 maximum units.</p>
+                            <p class="squad-helper-text">This means that if you enter a Historical entry, it could be 1 model or a squad of up to 10 models.</p>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                    </article>
+
+                    <!-- Prizes Card -->
+                    <article class="competition-card prizes-card" aria-labelledby="prizes-heading">
+                        <div class="card-header">
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                            <h3 id="prizes-heading" class="card-heading">Prizes</h3>
+                            <div class="dice-decoration dice-purple critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="coming-soon-placeholder">
+                                <div class="placeholder-icon" aria-hidden="true">🏆</div>
+                                <p class="placeholder-text">Prizes are currently unannounced and in construction.</p>
+                                <p class="coming-soon-text">Coming Soon!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <div class="dice-decoration dice-purple critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
+                        </div>
+                    </article>
+
+                    <!-- Judges Card -->
+                    <article class="competition-card judges-card" aria-labelledby="judges-heading">
+                        <div class="card-header">
+                            <div class="dice-decoration dice-purple critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-01.png"></div>
+                            <h3 id="judges-heading" class="card-heading">Judges</h3>
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                        
+                        <div class="card-content">
+                            <div class="judges-placeholder">
+                                <div class="placeholder-icon" aria-hidden="true">👥</div>
+                                <p class="placeholder-text">We will have 3 judges. More information about these to come in image format.</p>
+                                <p class="coming-soon-text">Coming Soon!</p>
+                            </div>
+                        </div>
+                        
+                        <div class="card-footer">
+                            <div class="dice-decoration dice-alt critical-dice" role="img"
+                                aria-label="Decorative gaming dice" data-bg="assets/Dice/Dice full colour-02.png"></div>
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>

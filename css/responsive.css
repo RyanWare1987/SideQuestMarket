@@ -1321,8 +1321,8 @@ svg {
 
 @media (min-width: 768px) {
   .event-details-grid {
-    /* Tablet: Two columns side by side */
-    grid-template-columns: 1fr 1fr;
+    /* Tablet: Keep single column for better readability */
+    grid-template-columns: 1fr;
     gap: var(--space-6);
     padding: 0 var(--space-6);
   }
