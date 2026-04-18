@@ -181,6 +181,150 @@
   margin: 0;
 }
 
+/* Judges Carousel Styles */
+.judges-carousel-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.judges-carousel {
+  overflow: hidden;
+  border-radius: var(--border-radius-lg);
+  position: relative;
+  background: rgba(var(--color-text-secondary), 0.05);
+  width: 100%;
+}
+
+.judges-carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 100%;
+}
+
+.judge-item {
+  flex: 0 0 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  position: relative;
+  padding: var(--space-2);
+}
+
+.judge-image {
+  width: 90%;
+  height: auto;
+  max-height: 700px;
+  max-width: 90%;
+  object-fit: contain;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.judge-placeholder {
+  flex-direction: column;
+  text-align: center;
+  padding: var(--space-8);
+  background: rgba(var(--color-text-secondary), 0.02);
+  width: 90%;
+}
+
+.judge-placeholder .placeholder-icon {
+  font-size: 5rem;
+  margin-bottom: var(--space-4);
+  opacity: 0.5;
+}
+
+.judge-placeholder .placeholder-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-3);
+  color: var(--color-text-secondary);
+}
+
+.judge-placeholder .coming-soon-text {
+  font-size: var(--font-size-2xl);
+  color: var(--color-primary);
+}
+
+/* Remove the visual hint arrow */
+.judges-carousel::after {
+  display: none;
+}
+
+/* Judges Carousel Controls */
+.judges-carousel-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-6);
+  margin-top: var(--space-4);
+  padding: var(--space-3);
+  position: relative;
+  z-index: 10;
+}
+
+.judges-carousel-btn {
+  background: linear-gradient(135deg, #6b46c1 0%, #8b5cf6 100%);
+  color: var(--color-pure-white);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-lg);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  border: 3px solid var(--color-pure-white);
+  opacity: 1;
+  visibility: visible !important;
+}
+
+.judges-carousel-btn:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-xl);
+  background: linear-gradient(135deg, #8b5cf6 0%, #6b46c1 100%);
+}
+
+.judges-carousel-btn:active {
+  transform: scale(0.95);
+}
+
+.judges-carousel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  background: #9ca3af;
+}
+
+.judges-carousel-btn .carousel-arrow {
+  line-height: 1;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Add a subtle pulse animation to indicate interactivity */
+.judges-carousel-btn {
+  animation: subtle-pulse 3s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% {
+    box-shadow: var(--shadow-lg);
+  }
+  50% {
+    box-shadow: var(--shadow-lg), 0 0 0 4px rgba(107, 70, 193, 0.2);
+  }
+}
+
+.judges-carousel-btn:hover {
+  animation: none;
+}
+
 /* Card Footers */
 .competition-card .card-footer {
   display: flex;
@@ -229,6 +373,170 @@ body.dark-mode .squad-helper-text {
   color: #a0a0a0;
 }
 
+body.dark-mode .judges-carousel {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .judge-placeholder {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+body.dark-mode .judge-placeholder .placeholder-text {
+  color: #d1d5db;
+}
+
+body.dark-mode .judge-placeholder .coming-soon-text {
+  color: #a855f7;
+}
+
+body.dark-mode .judges-carousel-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+  border-color: #374151;
+}
+
+body.dark-mode .judges-carousel-btn:hover {
+  background: linear-gradient(135deg, #a855f7 0%, #7c3aed 100%);
+}
+
+/* Judge Modal Styles */
+.judge-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.judge-modal.active {
+  display: flex;
+}
+
+.judge-modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
+}
+
+.judge-modal-content {
+  position: relative;
+  background: var(--color-pure-white);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  max-width: 95vw;
+  max-height: 95vh;
+  overflow: hidden;
+  z-index: 1001;
+}
+
+.judge-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4);
+  border-bottom: 2px solid var(--color-border-light);
+  background: linear-gradient(135deg, var(--color-pure-white) 0%, #f8f6ff 100%);
+}
+
+.judge-modal-title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.judge-modal-close {
+  background: none;
+  border: none;
+  font-size: var(--font-size-2xl);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-2);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.judge-modal-close:hover {
+  background: rgba(var(--color-text-secondary), 0.1);
+  color: var(--color-text-primary);
+}
+
+.judge-modal-body {
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+.judge-modal-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-md);
+}
+
+/* Dark mode styles for modal */
+body.dark-mode .judge-modal-content {
+  background: #2d2d2d;
+}
+
+body.dark-mode .judge-modal-header {
+  background: linear-gradient(135deg, #2d2d2d 0%, #1e1e1e 100%);
+  border-bottom-color: #4a4a4a;
+}
+
+body.dark-mode .judge-modal-title {
+  color: #f3f4f6;
+}
+
+body.dark-mode .judge-modal-close {
+  color: #d1d5db;
+}
+
+body.dark-mode .judge-modal-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f3f4f6;
+}
+
+/* Mobile-specific modal styles */
+@media (max-width: 768px) {
+  .judge-modal-content {
+    max-width: 98vw;
+    max-height: 98vh;
+    margin: 1vh;
+  }
+  
+  .judge-modal-header {
+    padding: var(--space-3);
+  }
+  
+  .judge-modal-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  .judge-modal-body {
+    padding: var(--space-2);
+    max-height: 85vh;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .competition-section {
@@ -247,6 +555,36 @@ body.dark-mode .squad-helper-text {
   .competition-card {
     padding: var(--space-4);
   }
+  
+  .judges-carousel-container {
+    max-width: 100%;
+  }
+  
+  .judge-item {
+    min-height: 400px;
+    padding: var(--space-1);
+  }
+  
+  .judge-image {
+    max-height: 600px;
+    width: 98%;
+    max-width: 98%;
+  }
+  
+  .judge-placeholder {
+    width: 98%;
+  }
+  
+  .judges-carousel-btn {
+    width: 52px;
+    height: 52px;
+    font-size: var(--font-size-xl);
+  }
+  
+  .judges-carousel-controls {
+    gap: var(--space-4);
+    margin-top: var(--space-3);
+  }
 }
 
 @media (max-width: 480px) {
@@ -256,6 +594,37 @@ body.dark-mode .squad-helper-text {
   
   .competition-card .card-heading {
     font-size: var(--font-size-lg);
+  }
+  
+  .judges-carousel-btn {
+    width: 48px;
+    height: 48px;
+    font-size: var(--font-size-lg);
+  }
+  
+  .judges-carousel-controls {
+    gap: var(--space-3);
+    margin-top: var(--space-2);
+  }
+  
+  .judge-item {
+    min-height: 350px;
+    padding: 0;
+  }
+  
+  .judge-image {
+    max-height: 500px;
+    width: 99%;
+    max-width: 99%;
+  }
+  
+  .judge-placeholder {
+    width: 99%;
+    padding: var(--space-4);
+  }
+  
+  .judge-image {
+    max-height: 250px;
   }
 }
 

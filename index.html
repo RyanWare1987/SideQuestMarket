@@ -81,10 +81,7 @@
                 <!-- Desktop Navigation -->
                 <ul class="nav-menu" role="menubar" aria-label="Main navigation menu">
                     <li role="none">
-                        <a href="#hero" role="menuitem" class="nav-link" aria-describedby="nav-home-desc">Home</a>
-                    </li>
-                    <li role="none">
-                        <a href="#vendor-logos" role="menuitem" class="nav-link"
+                        <a href="#vendors" role="menuitem" class="nav-link"
                             aria-describedby="nav-vendors-desc">Vendors</a>
                     </li>
                     <li role="none">
@@ -96,7 +93,7 @@
                             aria-describedby="nav-workshops-desc">Workshops</a>
                     </li>
                     <li role="none">
-                        <a href="#venue-details" role="menuitem" class="nav-link"
+                        <a href="#venue" role="menuitem" class="nav-link"
                             aria-describedby="nav-venue-desc">Venue</a>
                     </li>
                     <li role="none">
@@ -111,7 +108,6 @@
 
                 <!-- Hidden descriptions for screen readers -->
                 <div class="sr-only">
-                    <div id="nav-home-desc">Navigate to top of page and event overview</div>
                     <div id="nav-vendors-desc">Navigate to vendor logos carousel section</div>
                     <div id="nav-competition-desc">Navigate to miniature painting competition section</div>
                     <div id="nav-workshops-desc">Navigate to workshops and activities section</div>
@@ -143,11 +139,7 @@
                 <div id="mobile-menu" class="mobile-nav" aria-hidden="true" aria-label="Mobile navigation menu">
                     <ul role="menu" aria-label="Mobile navigation links">
                         <li role="none">
-                            <a href="#hero" role="menuitem" class="mobile-nav-link"
-                                aria-describedby="mobile-nav-home-desc">Home</a>
-                        </li>
-                        <li role="none">
-                            <a href="#vendor-logos" role="menuitem" class="mobile-nav-link"
+                            <a href="#vendors" role="menuitem" class="mobile-nav-link"
                                 aria-describedby="mobile-nav-vendors-desc">Vendors</a>
                         </li>
                         <li role="none">
@@ -159,7 +151,7 @@
                                 aria-describedby="mobile-nav-workshops-desc">Workshops</a>
                         </li>
                         <li role="none">
-                            <a href="#venue-details" role="menuitem" class="mobile-nav-link"
+                            <a href="#venue" role="menuitem" class="mobile-nav-link"
                                 aria-describedby="mobile-nav-venue-desc">Venue</a>
                         </li>
                         <li role="none">
@@ -174,7 +166,6 @@
 
                     <!-- Hidden descriptions for mobile navigation -->
                     <div class="sr-only">
-                        <div id="mobile-nav-home-desc">Return to top of page</div>
                         <div id="mobile-nav-vendors-desc">View vendor logos carousel</div>
                         <div id="mobile-nav-competition-desc">View miniature painting competition information</div>
                         <div id="mobile-nav-workshops-desc">View workshops and activities information</div>
@@ -361,7 +352,7 @@
         </div>
 
         <!-- Vendor Logos Carousel Section -->
-        <section id="vendor-logos" class="vendor-logos-section" aria-labelledby="vendor-logos-title"
+        <section id="vendors" class="vendor-logos-section" aria-labelledby="vendor-logos-title"
             aria-describedby="vendor-logos-description">
             <div class="container">
                 <h2 id="vendor-logos-title" class="section-heading">Our Vendors</h2>
@@ -484,10 +475,45 @@
                         </div>
                         
                         <div class="card-content">
-                            <div class="judges-placeholder">
-                                <div class="placeholder-icon" aria-hidden="true">👥</div>
-                                <p class="placeholder-text">We will have 3 judges. More information about these to come in image format.</p>
-                                <p class="coming-soon-text">Coming Soon!</p>
+                            <div class="judges-carousel-container" role="region" aria-label="Competition judges carousel">
+                                <div class="judges-carousel" role="img" aria-label="Rotating carousel of competition judges"
+                                    aria-describedby="judges-carousel-instructions">
+                                    <div class="judges-carousel-track" id="judges-track">
+                                        <!-- Judge 1 - Chris -->
+                                        <div class="judge-item">
+                                            <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Bio/Judge_Chris.png" 
+                                                 alt="Judge Chris - Competition Judge" 
+                                                 class="judge-image" 
+                                                 loading="lazy">
+                                        </div>
+                                        
+                                        <!-- Placeholder for more judges -->
+                                        <div class="judge-item judge-placeholder">
+                                            <div class="placeholder-icon" aria-hidden="true">👥</div>
+                                            <p class="placeholder-text">More judges to be announced</p>
+                                            <p class="coming-soon-text">Coming Soon!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Carousel Controls -->
+                                <div class="judges-carousel-controls" role="group" aria-label="Judges carousel navigation controls">
+                                    <button class="judges-carousel-btn judges-carousel-prev" aria-label="View previous judge"
+                                        aria-describedby="judges-prev-btn-desc">
+                                        <span class="carousel-arrow" aria-hidden="true">‹</span>
+                                    </button>
+                                    <button class="judges-carousel-btn judges-carousel-next" aria-label="View next judge"
+                                        aria-describedby="judges-next-btn-desc">
+                                        <span class="carousel-arrow" aria-hidden="true">›</span>
+                                    </button>
+                                </div>
+
+                                <!-- Hidden descriptions for screen readers -->
+                                <div class="sr-only">
+                                    <div id="judges-carousel-instructions">Use the arrow buttons or swipe to navigate through competition judges.</div>
+                                    <div id="judges-prev-btn-desc">Navigate to previous judge</div>
+                                    <div id="judges-next-btn-desc">Navigate to next judge</div>
+                                </div>
                             </div>
                         </div>
                         
@@ -499,6 +525,23 @@
                 </div>
             </div>
         </section>
+
+        <!-- Judge Image Modal -->
+        <div id="judge-modal" class="judge-modal" role="dialog" aria-labelledby="judge-modal-title" aria-describedby="judge-modal-description" aria-hidden="true">
+            <div class="judge-modal-overlay" aria-hidden="true"></div>
+            <div class="judge-modal-content">
+                <div class="judge-modal-header">
+                    <h2 id="judge-modal-title" class="judge-modal-title">Judge Information</h2>
+                    <button class="judge-modal-close" aria-label="Close judge image" id="close-judge-modal">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="judge-modal-body">
+                    <img src="" alt="" class="judge-modal-image" id="judge-modal-image">
+                </div>
+            </div>
+            <div class="sr-only" id="judge-modal-description">Enlarged view of the judge information</div>
+        </div>
 
         <!-- Workshops Section -->
         <section id="workshops" class="workshops-section" aria-labelledby="workshops-title"
@@ -773,7 +816,7 @@
         </section>
 
         <!-- Venue Details Section -->
-        <section id="venue-details" class="venue-details-section" aria-labelledby="venue-details-title"
+        <section id="venue" class="venue-details-section" aria-labelledby="venue-details-title"
             aria-describedby="venue-details-description">
             <div class="container">
                 <h2 id="venue-details-title" class="section-heading">Venue Information</h2>
@@ -1079,6 +1122,7 @@
     <script src="js/contact-form.js"></script>
     <script src="js/smooth-scroll.js"></script>
     <script src="js/vendor-carousel.js"></script>
+    <script src="js/judges-carousel.js"></script>
     <script src="js/site-map.js"></script>
     <script src="js/photo-gallery.js"></script>
 
