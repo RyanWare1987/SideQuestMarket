@@ -1,0 +1,26 @@
+{
+  "name": "Side Quest Market",
+  "short_name": "Side Quest Market",
+  "description": "Alternative Gaming Market featuring board games, card games, and handcrafted items",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6b46c1",
+  "icons": [
+    {
+      "src": "assets/Dice/Dice-Black-Trimmed.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/Dice/Dice-Black-Trimmed.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/optimized/logos/logo-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
