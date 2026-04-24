@@ -53,6 +53,8 @@
   cursor: pointer;
   transition: all 0.3s ease;
   background: var(--color-pure-white);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .site-map-image-wrapper:hover {
@@ -65,6 +67,19 @@
   outline-offset: 2px;
 }
 
+/* Desktop: Constrain wrapper size */
+@media (min-width: 768px) {
+  .site-map-image-wrapper {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-map-image-wrapper {
+    max-width: 450px;
+  }
+}
+
 /* Site Map Image */
 .site-map-image {
   width: 100%;
@@ -72,6 +87,8 @@
   display: block;
   transition: all 0.3s ease;
   cursor: pointer;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .site-map-image:hover {
@@ -80,6 +97,19 @@
 
 .site-map-image:focus {
   outline: none;
+}
+
+/* Desktop: Constrain image size */
+@media (min-width: 768px) {
+  .site-map-image {
+    max-width: 500px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .site-map-image {
+    max-width: 450px;
+  }
 }
 
 /* Mobile: Make image scrollable horizontally if needed */

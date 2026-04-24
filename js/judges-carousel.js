@@ -60,6 +60,9 @@ class JudgesCarousel {
                 image.style.cursor = 'pointer';
             }
         });
+        
+        // Re-setup when new images are added
+        this.totalItems = this.track.children.length;
     }
 
     setupModalEventListeners() {
