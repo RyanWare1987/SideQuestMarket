@@ -4,7 +4,7 @@
 .logo {
   width: 120px;
   height: 40px;
-  background-image: url('../assets/Full logo/Logo transparent-03.png');
+  background-image: url('../assets/FullLogo/Logo transparent-03.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center left;
@@ -15,7 +15,7 @@
   .logo {
     width: 140px;
     height: 45px;
-    background-image: url('../assets/Full logo/Logo transparent-03.png');
+    background-image: url('../assets/FullLogo/Logo transparent-03.png');
   }
 }
 
@@ -23,14 +23,14 @@
   .logo {
     width: 160px;
     height: 50px;
-    background-image: url('../assets/Full logo/Logo transparent-03.png');
+    background-image: url('../assets/FullLogo/Logo transparent-03.png');
   }
 }
 
 /* High DPI displays - use same white logo */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo {
-    background-image: url('../assets/Full logo/Logo transparent-03.png');
+    background-image: url('../assets/FullLogo/Logo transparent-03.png');
   }
 }
 

@@ -123,7 +123,7 @@ s3://your-bucket-name/
     │   └── backgrounds/
     ├── Dice/
     ├── VendorLogos/
-    ├── Full logo/
+    ├── FullLogo/
     ├── EventMedia/
     └── MarketPhotos_2025_optimized/
 ```

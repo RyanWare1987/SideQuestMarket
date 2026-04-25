@@ -51,9 +51,9 @@ class SiteManager {
     
     // Preload the actual brand logo files
     const logoImages = [
-      'assets/Full logo/Logo transparent-03.png',
-      'assets/Full logo/Logo transparent-02.png',
-      'assets/Full logo/Logo transparent-01.png'
+      'assets/FullLogo/Logo transparent-03.png',
+      'assets/FullLogo/Logo transparent-02.png',
+      'assets/FullLogo/Logo transparent-01.png'
     ];
     
     logoImages.forEach(src => {

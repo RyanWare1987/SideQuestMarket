@@ -83,9 +83,9 @@ jobs:
         fi
         
         # Upload full logos
-        if [ -d "SideQuestMarket/assets/Full logo" ]; then
+        if [ -d "SideQuestMarket/assets/FullLogo" ]; then
           echo "Uploading full logos..."
-          aws s3 sync "SideQuestMarket/assets/Full logo/" s3://side-quest-market/assets/Full\ logo/ \
+          aws s3 sync SideQuestMarket/assets/FullLogo/ s3://side-quest-market/assets/FullLogo/ \
             --include "*.png" \
             --include "*.jpg" \
             --include "*.jpeg" \
@@ -93,7 +93,7 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory 'SideQuestMarket/assets/Full logo' not found"
+          echo "Directory SideQuestMarket/assets/FullLogo not found"
         fi
         
         # Upload event media

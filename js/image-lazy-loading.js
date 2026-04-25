@@ -270,7 +270,7 @@ class ImageLazyLoader {
    */
   preloadCriticalImages() {
     const criticalImages = [
-      'assets/Full logo/Logo transparent-03.png',
+      'assets/FullLogo/Logo transparent-03.png',
       'assets/Banners/Side quest market [facebook banner].jpg'
     ];
 
