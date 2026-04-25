@@ -181,6 +181,134 @@
   margin: 0;
 }
 
+/* Prizes Styles */
+.prizes-intro-text {
+  font-size: var(--font-size-base);
+  color: var(--color-primary-black);
+  margin-bottom: var(--space-4);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+}
+
+.prizes-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.prize-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(107, 70, 193, 0.06);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-primary-purple);
+}
+
+.prize-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.prize-details {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  flex: 1;
+}
+
+.prize-name {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-base);
+  color: var(--color-primary-black);
+}
+
+.prize-description {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary-purple);
+  font-style: italic;
+}
+
+.prize-vendor-logo-wrap {
+  width: 160px;
+  height: 80px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.prize-vendor-logo-wrap img {
+  width: 160px !important;
+  height: 80px !important;
+  max-width: 160px !important;
+  max-height: 80px !important;
+  object-fit: contain;
+  display: block;
+}
+
+/* Mobile: hide logo from inside prize-item row, show in logos row below */
+@media (max-width: 767px) {
+  .prize-item {
+    flex-wrap: wrap;
+  }
+
+  .prize-vendor-logo-wrap {
+    display: none;
+  }
+
+  .prizes-logos-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-6);
+    margin-top: var(--space-4);
+    padding: var(--space-3);
+    background: rgba(107, 70, 193, 0.06);
+    border-radius: var(--radius-md);
+  }
+
+  .prizes-logos-row .prize-vendor-logo-wrap {
+    display: flex;
+    width: 120px;
+    height: 60px;
+    justify-content: center;
+  }
+
+  .prizes-logos-row .prize-vendor-logo-wrap img {
+    width: 120px !important;
+    height: 60px !important;
+    max-width: 120px !important;
+    max-height: 60px !important;
+  }
+}
+
+/* Desktop: hide the logos row (logos are inline in each prize-item) */
+@media (min-width: 768px) {
+  .prizes-logos-row {
+    display: none;
+  }
+}
+
+.prizes-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary, #666);
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+  padding: var(--space-3);
+  background: rgba(107, 70, 193, 0.04);
+  border-radius: var(--radius-md);
+  line-height: 1.5;
+}
+
 /* Judges Carousel Styles */
 .judges-carousel-container {
   position: relative;
