@@ -4,7 +4,7 @@
 .logo {
   width: 120px;
   height: 40px;
-  background-image: url('../assets/FullLogo/Logo transparent-03.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center left;
@@ -15,7 +15,7 @@
   .logo {
     width: 140px;
     height: 45px;
-    background-image: url('../assets/FullLogo/Logo transparent-03.png');
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png');
   }
 }
 
@@ -23,14 +23,14 @@
   .logo {
     width: 160px;
     height: 50px;
-    background-image: url('../assets/FullLogo/Logo transparent-03.png');
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png');
   }
 }
 
 /* High DPI displays - use same white logo */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .logo {
-    background-image: url('../assets/FullLogo/Logo transparent-03.png');
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png');
   }
 }
 
@@ -45,18 +45,18 @@
 
 /* Critical hero background for immediate loading */
 .hero-image-section.critical-bg {
-  background-image: url('../assets/Banners/Side quest market [facebook banner].jpg');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg');
 }
 
 @media (min-width: 768px) {
   .hero-image-section.critical-bg {
-    background-image: url('../assets/Social media/Side quest market [facebook banner].jpg');
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Social media/Side quest market [facebook banner].jpg');
   }
 }
 
 @media (min-width: 1024px) {
   .hero-image-section.critical-bg {
-    background-image: url('../assets/Banners/Side quest market [facebook banner].jpg');
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg');
   }
 }
 
@@ -76,12 +76,12 @@
 .dice-decoration.dice-purple,
 .dice-decoration.dice-white,
 .dice-decoration.dice-black {
-  background-image: url('../assets/Dice/Dice full colour-01.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice full colour-01.png');
 }
 
 /* Alternate dice for variety */
 .dice-decoration.dice-alt {
-  background-image: url('../assets/Dice/Dice full colour-02.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice full colour-02.png');
 }
 
 /* Size variants */
@@ -102,11 +102,11 @@
 
 /* Critical dice images for immediate loading */
 .dice-decoration.critical-dice {
-  background-image: url('../assets/Dice/Dice full colour-01.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice full colour-01.png');
 }
 
 .dice-decoration.critical-dice.dice-alt {
-  background-image: url('../assets/Dice/Dice full colour-02.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice full colour-02.png');
 }
 
 /* Lazy loading support */

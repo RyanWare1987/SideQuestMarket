@@ -270,8 +270,8 @@ class ImageLazyLoader {
    */
   preloadCriticalImages() {
     const criticalImages = [
-      'assets/FullLogo/Logo transparent-03.png',
-      'assets/Banners/Side quest market [facebook banner].jpg'
+      'https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png',
+      'https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg'
     ];
 
     criticalImages.forEach(src => {
