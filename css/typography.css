@@ -331,7 +331,7 @@ li {
   top: 0.5em;
   width: 16px;
   height: 16px;
-  background-image: url('../assets/optimized/dice/dice-32.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/dice/dice-32.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

@@ -127,6 +127,34 @@ jobs:
         else
           echo "Directory assets/MarketPhotos_2025_optimized not found"
         fi
+
+        # Upload banners
+        if [ -d "assets/Banners" ]; then
+          echo "Uploading banners..."
+          aws s3 sync assets/Banners/ s3://side-quest-market/assets/Banners/ \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE \
+            --delete
+        else
+          echo "Directory assets/Banners not found"
+        fi
+
+        # Upload social media assets
+        if [ -d "assets/Social media" ]; then
+          echo "Uploading social media assets..."
+          aws s3 sync "assets/Social media/" "s3://side-quest-market/assets/Social media/" \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE \
+            --delete
+        else
+          echo "Directory assets/Social media not found"
+        fi
         
         echo "Upload completed!"
 
