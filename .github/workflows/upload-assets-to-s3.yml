@@ -26,11 +26,19 @@ jobs:
         aws-region: eu-west-2
 
     - name: Upload images to S3
+      working-directory: ./
       run: |
         # Upload all images from assets directory to S3
         # Preserve directory structure
         
         echo "Uploading images to S3 bucket: side-quest-market"
+        echo "Current directory: $(pwd)"
+        echo "Listing directories:"
+        ls -la
+        echo "Checking SideQuestMarket directory:"
+        ls -la SideQuestMarket/
+        echo "Checking assets directory:"
+        ls -la SideQuestMarket/assets/
         
         # Upload optimized images
         if [ -d "SideQuestMarket/assets/optimized" ]; then
