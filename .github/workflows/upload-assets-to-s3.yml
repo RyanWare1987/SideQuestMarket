@@ -1,0 +1,119 @@
+name: Upload Assets to S3
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  upload-assets:
+    runs-on: ubuntu-latest
+    
+    # Required for OIDC
+    permissions:
+      id-token: write
+      contents: read
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+        role-session-name: GitHubActions-UploadAssets
+        aws-region: eu-west-2
+
+    - name: Upload images to S3
+      run: |
+        # Upload all images from assets directory to S3
+        # Preserve directory structure
+        
+        echo "Uploading images to S3 bucket: side-quest-market"
+        
+        # Upload optimized images
+        if [ -d "SideQuestMarket/assets/optimized" ]; then
+          echo "Uploading optimized assets..."
+          aws s3 sync SideQuestMarket/assets/optimized/ s3://side-quest-market/assets/optimized/ \
+            --exclude "*.ai" \
+            --exclude "*.psd" \
+            --exclude "*.zip" \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --include "*.gif" \
+            --include "*.svg" \
+            --include "*.webp" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        # Upload dice images
+        if [ -d "SideQuestMarket/assets/Dice" ]; then
+          echo "Uploading dice assets..."
+          aws s3 sync SideQuestMarket/assets/Dice/ s3://side-quest-market/assets/Dice/ \
+            --exclude "*.ai" \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        # Upload vendor logos
+        if [ -d "SideQuestMarket/assets/VendorLogos" ]; then
+          echo "Uploading vendor logos..."
+          aws s3 sync SideQuestMarket/assets/VendorLogos/ s3://side-quest-market/assets/VendorLogos/ \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --include "*.svg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        # Upload full logos
+        if [ -d "SideQuestMarket/assets/Full logo" ]; then
+          echo "Uploading full logos..."
+          aws s3 sync "SideQuestMarket/assets/Full logo/" s3://side-quest-market/assets/Full\ logo/ \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        # Upload event media
+        if [ -d "SideQuestMarket/assets/EventMedia" ]; then
+          echo "Uploading event media..."
+          aws s3 sync SideQuestMarket/assets/EventMedia/ s3://side-quest-market/assets/EventMedia/ \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        # Upload market photos
+        if [ -d "SideQuestMarket/assets/MarketPhotos_2025_optimized" ]; then
+          echo "Uploading market photos..."
+          aws s3 sync SideQuestMarket/assets/MarketPhotos_2025_optimized/ s3://side-quest-market/assets/MarketPhotos_2025_optimized/ \
+            --include "*.png" \
+            --include "*.jpg" \
+            --include "*.jpeg" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        fi
+        
+        echo "Upload completed!"
+
+    - name: Output S3 URLs
+      run: |
+        echo "Images uploaded to:"
+        echo "Base URL: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/"
+        echo ""
+        echo "Example URLs:"
+        echo "- Dice: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/"
+        echo "- Logos: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/logos/"
+        echo "- Vendor Logos: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/"

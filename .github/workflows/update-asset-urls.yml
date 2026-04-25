@@ -1,0 +1,53 @@
+name: Update Asset URLs to S3
+
+on:
+  workflow_dispatch: # Manual trigger only
+
+jobs:
+  update-urls:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Update asset URLs in HTML and CSS files
+      run: |
+        echo "Updating asset URLs to use S3..."
+        
+        S3_BASE_URL="https://side-quest-market.s3.eu-west-2.amazonaws.com"
+        
+        echo "Using S3 base URL: $S3_BASE_URL"
+        
+        # Find and replace asset URLs in HTML files
+        find SideQuestMarket -name "*.html" -type f -exec sed -i "s|assets/|${S3_BASE_URL}/assets/|g" {} \;
+        
+        # Find and replace asset URLs in CSS files  
+        find SideQuestMarket -name "*.css" -type f -exec sed -i "s|assets/|${S3_BASE_URL}/assets/|g" {} \;
+        
+        # Find and replace asset URLs in JS files
+        find SideQuestMarket -name "*.js" -type f -exec sed -i "s|assets/|${S3_BASE_URL}/assets/|g" {} \;
+        
+        # Also handle data-bg attributes specifically
+        find SideQuestMarket -name "*.html" -type f -exec sed -i "s|data-bg=\"assets/|data-bg=\"${S3_BASE_URL}/assets/|g" {} \;
+        
+        echo "URL updates completed!"
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: "Update asset URLs to use S3 hosting"
+        title: "Update asset URLs to S3"
+        body: |
+          This PR updates all asset URLs to use S3 hosting instead of local assets.
+          
+          Changes:
+          - Updated HTML files to reference S3 URLs
+          - Updated CSS files to reference S3 URLs  
+          - Updated JS files to reference S3 URLs
+          - Updated data-bg attributes to reference S3 URLs
+          
+          S3 Base URL: https://side-quest-market.s3.eu-west-2.amazonaws.com
+        branch: update-s3-asset-urls
+        delete-branch: true
