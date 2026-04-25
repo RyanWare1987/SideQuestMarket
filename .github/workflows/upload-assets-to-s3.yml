@@ -33,17 +33,13 @@ jobs:
         
         echo "Uploading images to S3 bucket: side-quest-market"
         echo "Current directory: $(pwd)"
-        echo "Listing directories:"
-        ls -la
-        echo "Checking SideQuestMarket directory:"
-        ls -la SideQuestMarket/
         echo "Checking assets directory:"
-        ls -la SideQuestMarket/assets/
+        ls -la assets/
         
         # Upload optimized images
-        if [ -d "SideQuestMarket/assets/optimized" ]; then
+        if [ -d "assets/optimized" ]; then
           echo "Uploading optimized assets..."
-          aws s3 sync SideQuestMarket/assets/optimized/ s3://side-quest-market/assets/optimized/ \
+          aws s3 sync assets/optimized/ s3://side-quest-market/assets/optimized/ \
             --exclude "*.ai" \
             --exclude "*.psd" \
             --exclude "*.zip" \
@@ -57,13 +53,13 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/optimized not found"
+          echo "Directory assets/optimized not found"
         fi
         
         # Upload dice images
-        if [ -d "SideQuestMarket/assets/Dice" ]; then
+        if [ -d "assets/Dice" ]; then
           echo "Uploading dice assets..."
-          aws s3 sync SideQuestMarket/assets/Dice/ s3://side-quest-market/assets/Dice/ \
+          aws s3 sync assets/Dice/ s3://side-quest-market/assets/Dice/ \
             --exclude "*.ai" \
             --include "*.png" \
             --include "*.jpg" \
@@ -72,13 +68,13 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/Dice not found"
+          echo "Directory assets/Dice not found"
         fi
         
         # Upload vendor logos
-        if [ -d "SideQuestMarket/assets/VendorLogos" ]; then
+        if [ -d "assets/VendorLogos" ]; then
           echo "Uploading vendor logos..."
-          aws s3 sync SideQuestMarket/assets/VendorLogos/ s3://side-quest-market/assets/VendorLogos/ \
+          aws s3 sync assets/VendorLogos/ s3://side-quest-market/assets/VendorLogos/ \
             --include "*.png" \
             --include "*.jpg" \
             --include "*.jpeg" \
@@ -87,13 +83,13 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/VendorLogos not found"
+          echo "Directory assets/VendorLogos not found"
         fi
         
         # Upload full logos
-        if [ -d "SideQuestMarket/assets/FullLogo" ]; then
+        if [ -d "assets/FullLogo" ]; then
           echo "Uploading full logos..."
-          aws s3 sync SideQuestMarket/assets/FullLogo/ s3://side-quest-market/assets/FullLogo/ \
+          aws s3 sync assets/FullLogo/ s3://side-quest-market/assets/FullLogo/ \
             --include "*.png" \
             --include "*.jpg" \
             --include "*.jpeg" \
@@ -101,13 +97,13 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/FullLogo not found"
+          echo "Directory assets/FullLogo not found"
         fi
         
         # Upload event media
-        if [ -d "SideQuestMarket/assets/EventMedia" ]; then
+        if [ -d "assets/EventMedia" ]; then
           echo "Uploading event media..."
-          aws s3 sync SideQuestMarket/assets/EventMedia/ s3://side-quest-market/assets/EventMedia/ \
+          aws s3 sync assets/EventMedia/ s3://side-quest-market/assets/EventMedia/ \
             --include "*.png" \
             --include "*.jpg" \
             --include "*.jpeg" \
@@ -115,13 +111,13 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/EventMedia not found"
+          echo "Directory assets/EventMedia not found"
         fi
         
         # Upload market photos
-        if [ -d "SideQuestMarket/assets/MarketPhotos_2025_optimized" ]; then
+        if [ -d "assets/MarketPhotos_2025_optimized" ]; then
           echo "Uploading market photos..."
-          aws s3 sync SideQuestMarket/assets/MarketPhotos_2025_optimized/ s3://side-quest-market/assets/MarketPhotos_2025_optimized/ \
+          aws s3 sync assets/MarketPhotos_2025_optimized/ s3://side-quest-market/assets/MarketPhotos_2025_optimized/ \
             --include "*.png" \
             --include "*.jpg" \
             --include "*.jpeg" \
@@ -129,7 +125,7 @@ jobs:
             --metadata-directive REPLACE \
             --delete
         else
-          echo "Directory SideQuestMarket/assets/MarketPhotos_2025_optimized not found"
+          echo "Directory assets/MarketPhotos_2025_optimized not found"
         fi
         
         echo "Upload completed!"
