@@ -8,17 +8,17 @@
   "theme_color": "#6b46c1",
   "icons": [
     {
-      "src": "assets/Dice/Dice-Black-Trimmed.png",
+      "src": "https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-Black-Trimmed.png",
       "sizes": "32x32",
       "type": "image/png"
     },
     {
-      "src": "assets/Dice/Dice-Black-Trimmed.png",
+      "src": "https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-Black-Trimmed.png",
       "sizes": "64x64",
       "type": "image/png"
     },
     {
-      "src": "assets/optimized/logos/logo-192.png",
+      "src": "https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/logos/logo-192.png",
       "sizes": "192x192",
       "type": "image/png"
     }

@@ -261,7 +261,7 @@ window.testDice = function() {
   
   // Create a highly visible test dice
   const testDice = document.createElement('div');
-  testDice.style.cssText = 'position: fixed; top: 100px; left: 50%; width: 64px; height: 64px; background-image: url("assets/Dice/Dice-white.png"); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.8; z-index: 1000; border: 2px solid red; animation: fallAndRotate 5s linear infinite;';
+  testDice.style.cssText = 'position: fixed; top: 100px; left: 50%; width: 64px; height: 64px; background-image: url("https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png"); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.8; z-index: 1000; border: 2px solid red; animation: fallAndRotate 5s linear infinite;';
   
   document.body.appendChild(testDice);
   
@@ -286,7 +286,7 @@ window.createTestDiceNow = function() {
       position: absolute;
       width: 32px;
       height: 32px;
-      background-image: url('assets/Dice/Dice-white.png');
+      background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png');
       background-size: contain;
       background-repeat: no-repeat;
       background-position: center;

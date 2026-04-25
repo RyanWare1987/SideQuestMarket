@@ -750,7 +750,7 @@ body {
 .scroll-dice {
   width: 36px;
   height: 36px;
-  background-image: url('../assets/Dice/Dice-white.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1165,15 +1165,15 @@ body.dark-mode .contact-form:focus-within {
 
 /* Dice Color Variants */
 .dice-purple {
-  background-image: url('../assets/optimized/dice/dice-purple.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/dice/dice-purple.png');
 }
 
 .dice-white {
-  background-image: url('../assets/optimized/dice/dice-white.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/dice/dice-white.png');
 }
 
 .dice-black {
-  background-image: url('../assets/optimized/dice/dice-black.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/dice/dice-black.png');
 }
 
 /* Event Details List */
@@ -2041,7 +2041,7 @@ body.dark-mode .contact-form:focus-within {
 .footer-logo .logo {
   width: 720px;
   height: 240px;
-  background-image: url('../assets/Full logo/Logo transparent-03.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-03.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

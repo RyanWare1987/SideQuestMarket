@@ -1473,13 +1473,13 @@ svg {
   /* Light mode dice - use purple dice on mobile */
   .dice-decoration.dice-purple,
   .dice-decoration.dice-alt {
-    background-image: url('../assets/Dice/Dice-purple.png') !important;
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-purple.png') !important;
   }
 
   /* Dark mode dice - use white dice on mobile */
   body.dark-mode .dice-decoration.dice-purple,
   body.dark-mode .dice-decoration.dice-alt {
-    background-image: url('../assets/Dice/Dice-white.png') !important;
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png') !important;
   }
 }
 
@@ -1713,13 +1713,13 @@ svg {
   /* Light mode dice - use purple dice on desktop */
   .dice-decoration.dice-purple,
   .dice-decoration.dice-alt {
-    background-image: url('../assets/Dice/Dice-purple.png') !important;
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-purple.png') !important;
   }
 
   /* Dark mode dice - use white dice on desktop */
   body.dark-mode .dice-decoration.dice-purple,
   body.dark-mode .dice-decoration.dice-alt {
-    background-image: url('../assets/Dice/Dice-white.png') !important;
+    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png') !important;
   }
 
   /* Remove bottom dice on desktop cards for cleaner appearance */

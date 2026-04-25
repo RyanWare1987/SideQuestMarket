@@ -19,7 +19,7 @@
   position: absolute;
   width: 24px;
   height: 24px;
-  background-image: url('../assets/Dice/Dice-white.png');
+  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/Dice-white.png');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

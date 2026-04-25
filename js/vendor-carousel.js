@@ -175,7 +175,7 @@ class VendorCarousel {
       logoContainer.className = 'vendor-logo-container';
 
       const img = document.createElement('img');
-      img.src = `assets/VendorLogos/${logo}`;
+      img.src = `https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/${logo}`;
       img.alt = `${this.vendorNames[index]} logo`;
       img.loading = 'lazy';
       img.onerror = () => {
