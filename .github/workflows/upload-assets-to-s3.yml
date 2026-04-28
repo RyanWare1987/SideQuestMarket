@@ -156,6 +156,19 @@ jobs:
           echo "Directory assets/Social media not found"
         fi
         
+        # Upload videos
+        if [ -d "assets/videos" ]; then
+          echo "Uploading videos..."
+          aws s3 sync assets/videos/ s3://side-quest-market/assets/videos/ \
+            --include "*.mp4" \
+            --include "*.webm" \
+            --include "*.mov" \
+            --cache-control "public, max-age=31536000" \
+            --metadata-directive REPLACE
+        else
+          echo "Directory assets/videos not found"
+        fi
+        
         echo "Upload completed!"
 
     - name: Output S3 URLs
