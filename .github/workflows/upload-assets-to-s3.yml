@@ -17,6 +17,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 2  # Need previous commit to diff against
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
@@ -25,158 +27,122 @@ jobs:
         role-session-name: GitHubActions-UploadAssets
         aws-region: eu-west-2
 
-    - name: Upload images to S3
-      working-directory: ./
+    - name: Upload changed assets to S3
+      working-directory: ./SideQuestMarket
       run: |
-        # Upload all images from assets directory to S3
-        # Preserve directory structure
-        
-        echo "Uploading images to S3 bucket: side-quest-market"
+        echo "Uploading changed assets to S3 bucket: side-quest-market"
         echo "Current directory: $(pwd)"
-        echo "Checking assets directory:"
-        ls -la assets/
-        
+
+        # Get list of files changed in this push
+        CHANGED=$(git diff --name-only HEAD~1 HEAD)
+        echo "Changed files:"
+        echo "$CHANGED"
+
+        # Helper: returns true if any changed file is under the given path
+        changed_in() {
+          echo "$CHANGED" | grep -q "SideQuestMarket/$1"
+        }
+
         # Upload optimized images
-        if [ -d "assets/optimized" ]; then
+        if changed_in "assets/optimized" && [ -d "assets/optimized" ]; then
           echo "Uploading optimized assets..."
           aws s3 sync assets/optimized/ s3://side-quest-market/assets/optimized/ \
-            --exclude "*.ai" \
-            --exclude "*.psd" \
-            --exclude "*.zip" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
-            --include "*.gif" \
-            --include "*.svg" \
-            --include "*.webp" \
+            --exclude "*.ai" --exclude "*.psd" --exclude "*.zip" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
+            --include "*.gif" --include "*.svg" --include "*.webp" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/optimized not found"
+          echo "No changes in assets/optimized - skipping"
         fi
-        
+
         # Upload dice images
-        if [ -d "assets/Dice" ]; then
+        if changed_in "assets/Dice" && [ -d "assets/Dice" ]; then
           echo "Uploading dice assets..."
           aws s3 sync assets/Dice/ s3://side-quest-market/assets/Dice/ \
             --exclude "*.ai" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/Dice not found"
+          echo "No changes in assets/Dice - skipping"
         fi
-        
+
         # Upload vendor logos
-        if [ -d "assets/VendorLogos" ]; then
+        if changed_in "assets/VendorLogos" && [ -d "assets/VendorLogos" ]; then
           echo "Uploading vendor logos..."
           aws s3 sync assets/VendorLogos/ s3://side-quest-market/assets/VendorLogos/ \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
-            --include "*.svg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" --include "*.svg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/VendorLogos not found"
+          echo "No changes in assets/VendorLogos - skipping"
         fi
-        
+
         # Upload full logos
-        if [ -d "assets/FullLogo" ]; then
+        if changed_in "assets/FullLogo" && [ -d "assets/FullLogo" ]; then
           echo "Uploading full logos..."
           aws s3 sync assets/FullLogo/ s3://side-quest-market/assets/FullLogo/ \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/FullLogo not found"
+          echo "No changes in assets/FullLogo - skipping"
         fi
-        
+
         # Upload event media
-        if [ -d "assets/EventMedia" ]; then
+        if changed_in "assets/EventMedia" && [ -d "assets/EventMedia" ]; then
           echo "Uploading event media..."
           aws s3 sync assets/EventMedia/ s3://side-quest-market/assets/EventMedia/ \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/EventMedia not found"
+          echo "No changes in assets/EventMedia - skipping"
         fi
-        
+
         # Upload market photos
-        if [ -d "assets/MarketPhotos_2025_optimized" ]; then
+        if changed_in "assets/MarketPhotos_2025_optimized" && [ -d "assets/MarketPhotos_2025_optimized" ]; then
           echo "Uploading market photos..."
           aws s3 sync assets/MarketPhotos_2025_optimized/ s3://side-quest-market/assets/MarketPhotos_2025_optimized/ \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/MarketPhotos_2025_optimized not found"
+          echo "No changes in assets/MarketPhotos_2025_optimized - skipping"
         fi
 
         # Upload banners
-        if [ -d "assets/Banners" ]; then
+        if changed_in "assets/Banners" && [ -d "assets/Banners" ]; then
           echo "Uploading banners..."
           aws s3 sync assets/Banners/ s3://side-quest-market/assets/Banners/ \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/Banners not found"
+          echo "No changes in assets/Banners - skipping"
         fi
 
         # Upload social media assets
-        if [ -d "assets/Social media" ]; then
+        if changed_in "assets/Social media" && [ -d "assets/Social media" ]; then
           echo "Uploading social media assets..."
           aws s3 sync "assets/Social media/" "s3://side-quest-market/assets/Social media/" \
-            --include "*.png" \
-            --include "*.jpg" \
-            --include "*.jpeg" \
+            --include "*.png" --include "*.jpg" --include "*.jpeg" \
             --cache-control "public, max-age=31536000" \
-            --metadata-directive REPLACE \
-            --delete
+            --metadata-directive REPLACE --delete
         else
-          echo "Directory assets/Social media not found"
+          echo "No changes in assets/Social media - skipping"
         fi
-        
+
         # Upload videos
-        if [ -d "assets/videos" ]; then
+        if changed_in "assets/videos" && [ -d "assets/videos" ]; then
           echo "Uploading videos..."
           aws s3 sync assets/videos/ s3://side-quest-market/assets/videos/ \
-            --include "*.mp4" \
-            --include "*.webm" \
-            --include "*.mov" \
+            --include "*.mp4" --include "*.webm" --include "*.mov" \
             --cache-control "public, max-age=31536000" \
             --metadata-directive REPLACE
         else
-          echo "Directory assets/videos not found"
+          echo "No changes in assets/videos - skipping"
         fi
-        
-        echo "Upload completed!"
 
-    - name: Output S3 URLs
-      run: |
-        echo "Images uploaded to:"
-        echo "Base URL: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/"
-        echo ""
-        echo "Example URLs:"
-        echo "- Dice: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Dice/"
-        echo "- Logos: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/logos/"
-        echo "- Vendor Logos: https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/VendorLogos/"
+        echo "Upload completed!"

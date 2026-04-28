@@ -68,6 +68,15 @@
         }
     </style>
 
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XL7K441GTK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XL7K441GTK');
+    </script>
+
     <!-- Font preloading for performance -->
     <link rel="preload" href="fonts/Aurora.otf" as="font" type="font/otf" crossorigin="anonymous">
 
@@ -211,7 +220,7 @@
                     muted
                     loop
                     playsinline
-                    preload="auto"
+                    preload="metadata"
                     aria-label="Side Quest Market intro video">
                 </video>
             </div>
