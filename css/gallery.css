@@ -1,0 +1,338 @@
+/* ── Gallery Page ─────────────────────────────────────────────────────────── */
+
+/* Force body padding so fixed header is never covered */
+body {
+  padding-top: 70px !important;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px !important;
+  }
+}
+
+/* Hero — sits below the fixed header (header height = 70px, body already has padding-top:70px from components.css) */
+.gallery-hero {
+  background:
+    linear-gradient(135deg, rgba(26,13,46,0.82) 0%, rgba(45,27,78,0.75) 100%),
+    url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg')
+    center/cover no-repeat;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+  border-bottom: 4px solid var(--color-accent-gold, #f4d03f);
+}
+
+.gallery-title {
+  font-family: 'Aurora', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  color: var(--color-accent-gold, #f4d03f);
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.6);
+}
+
+.gallery-subtitle {
+  font-size: 1.05rem;
+  color: #a78bfa;
+  margin-bottom: 0.75rem;
+}
+
+.gallery-credit {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.75);
+}
+
+.gallery-credit a {
+  color: #f4d03f;
+  text-decoration: none;
+}
+
+.gallery-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ── Filter bar ──────────────────────────────────────────────────────────── */
+.gallery-filter-bar {
+  background: var(--color-deep-purple, #1a0d2e);
+  border-bottom: 1px solid rgba(167,139,250,0.2);
+  position: sticky;
+  top: 70px;
+  z-index: 50;
+  padding: 0.75rem 1rem;
+}
+
+.gallery-filter-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-btn {
+  padding: 0.4rem 1.1rem;
+  border-radius: 50px;
+  border: 2px solid rgba(167,139,250,0.4);
+  background: transparent;
+  color: #a78bfa;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.filter-btn:hover {
+  border-color: #a78bfa;
+  background: rgba(107,70,193,0.15);
+  color: #fff;
+}
+
+.filter-btn.active {
+  background: var(--color-primary-purple, #6b46c1);
+  border-color: var(--color-primary-purple, #6b46c1);
+  color: #fff;
+}
+
+/* ── Gallery section ─────────────────────────────────────────────────────── */
+.gallery-section {
+  background: #f8f6ff;
+  padding: 2.5rem 1rem 3rem;
+  min-height: 400px;
+  /* Clip any overflow from hover effects */
+  clip-path: inset(0);
+}
+
+body.dark-mode .gallery-section {
+  background: #1e1e2e;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.75rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+/* ── Gallery item ────────────────────────────────────────────────────────── */
+.gallery-item {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2d1b4e;
+  aspect-ratio: 1 / 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: box-shadow 0.2s;
+  /* clip children strictly — no transform on this element */
+  clip-path: inset(0 round 8px);
+}
+
+.gallery-item:hover,
+.gallery-item:focus {
+  box-shadow: 0 8px 24px rgba(107,70,193,0.3);
+  outline: none;
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid #6b46c1;
+  outline-offset: 2px;
+}
+
+.gallery-item img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+}
+
+.gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,13,46,0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.gallery-item:hover .gallery-item-overlay {
+  background: rgba(26,13,46,0.5);
+}
+
+.gallery-item-zoom {
+  width: 52px;
+  height: 52px;
+  opacity: 0;
+  transform: scale(0.7) rotate(-15deg);
+  transition: opacity 0.2s, transform 0.25s;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+}
+
+.gallery-item:hover .gallery-item-zoom {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+/* ── Empty state ─────────────────────────────────────────────────────────── */
+.gallery-empty {
+  text-align: center;
+  color: #888;
+  font-size: 1rem;
+  padding: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Footer credit ───────────────────────────────────────────────────────── */
+.gallery-footer-credit {
+  background: var(--color-deep-purple, #1a0d2e);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.5);
+  border-top: 1px solid rgba(167,139,250,0.15);
+}
+
+.gallery-footer-credit a {
+  color: #a78bfa;
+  text-decoration: none;
+}
+
+.gallery-footer-credit a:hover {
+  text-decoration: underline;
+}
+
+/* ── Lightbox ────────────────────────────────────────────────────────────── */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.lightbox.open {
+  display: block;
+}
+
+/* Dark backdrop — sits at the bottom of the lightbox stack */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 2, 15, 0.92);
+  z-index: 2001;
+  cursor: pointer;
+}
+
+/* Image container — above overlay, below buttons */
+.lightbox-content {
+  position: fixed;
+  inset: 0;
+  z-index: 2002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 5rem 4rem;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+.lightbox-img {
+  max-width: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+  border-radius: 6px;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.7);
+  display: block;
+  pointer-events: all;
+}
+
+@media (max-width: 600px) {
+  .lightbox-content {
+    padding: 4rem 0.5rem 3.5rem;
+  }
+}
+
+/* Close, prev, next — highest z-index, always on top */
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: fixed;
+  z-index: 2003;
+  border: 2px solid rgba(255,255,255,0.4);
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+  pointer-events: all;
+}
+
+.lightbox-close {
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev { left: 0.75rem; }
+.lightbox-next { right: 0.75rem; }
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+  background: rgba(107,70,193,0.9);
+  border-color: #a78bfa;
+}
+
+/* Caption */
+.lightbox-caption {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.7);
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  white-space: nowrap;
+  z-index: 2003;
+  pointer-events: none;
+}
