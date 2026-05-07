@@ -34,31 +34,8 @@
   }
 }
 
-/* Hero Image Section - using Facebook banner */
-.hero-image-section {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #1a0d2e; /* Dark purple fallback while loading */
-  position: relative;
-}
-
-/* Critical hero background for immediate loading */
-.hero-image-section.critical-bg {
-  background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg');
-}
-
-@media (min-width: 768px) {
-  .hero-image-section.critical-bg {
-    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Social media/Side quest market [facebook banner].jpg');
-  }
-}
-
-@media (min-width: 1024px) {
-  .hero-image-section.critical-bg {
-    background-image: url('https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/Banners/Side quest market [facebook banner].jpg');
-  }
-}
+/* DEPRECATED: Hero Image Section - replaced by hero-slideshow-section */
+/* .hero-image-section and .hero-image-section.critical-bg styles removed */
 
 /* Dice decorative elements */
 .dice-decoration {

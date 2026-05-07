@@ -127,6 +127,7 @@
     <link rel="stylesheet" href="css/photo-gallery.css">
     <link rel="stylesheet" href="css/competition.css">
     <link rel="stylesheet" href="css/workshops.css">
+    <link rel="stylesheet" href="css/hero-slideshow.css">
 </head>
 
 <body>
@@ -211,25 +212,36 @@
 
     <!-- Main content -->
     <main id="main-content" role="main">
-        <!-- Mobile Logo Section (only visible on mobile) -->
-        <section class="mobile-logo-section mobile-only" aria-hidden="true">
-            <div class="mobile-logo-container">
-                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/FullLogo/Logo transparent-01.png" alt="Side Quest Market Logo"
-                    class="mobile-hero-logo" loading="lazy">
+        <!-- Mobile Slideshow (replaces mobile-logo-section) -->
+        <section class="hero-slideshow-mobile mobile-only" aria-label="Hero banner slideshow">
+            <div class="slideshow-container" id="mobile-slideshow">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_1.png" alt="Side Quest Market Banner 1" class="slideshow-slide active">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_2.png" alt="Side Quest Market Banner 2" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_3.png" alt="Side Quest Market Banner 3" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_4.png" alt="Side Quest Market Banner 4" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_5.png" alt="Side Quest Market Banner 5" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_6.png" alt="Side Quest Market Banner 6" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_7.png" alt="Side Quest Market Banner 7" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_8.png" alt="Side Quest Market Banner 8" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-mob/MobBanner_9.png" alt="Side Quest Market Banner 9" class="slideshow-slide">
             </div>
         </section>
 
-        <!-- Hero Image Section (hidden on mobile to remove blank purple space) -->
-        <section id="hero" class="hero-image-section tablet-up" aria-labelledby="hero-title"
-            data-bg-set="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/backgrounds/hero-bg-768.jpg 768w, https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/backgrounds/hero-bg-1024.jpg 1024w, https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/optimized/backgrounds/hero-bg-1920.jpg 1920w">
-            <div class="hero-image-overlay"></div>
+        <!-- Desktop Slideshow (replaces hero-image-section) -->
+        <section id="hero" class="hero-slideshow-section tablet-up" aria-label="Hero banner slideshow">
+            <div class="slideshow-container" id="desktop-slideshow">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_1.png" alt="Side Quest Market Banner 1" class="slideshow-slide active">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_2.png" alt="Side Quest Market Banner 2" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_3.png" alt="Side Quest Market Banner 3" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_4.png" alt="Side Quest Market Banner 4" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_5.png" alt="Side Quest Market Banner 5" class="slideshow-slide">
+                <img src="https://side-quest-market.s3.eu-west-2.amazonaws.com/assets/banner-web/WebBanner_6.png" alt="Side Quest Market Banner 6" class="slideshow-slide">
+            </div>
         </section>
 
         <!-- Hero Banner Section -->
         <section class="hero-banner-section" aria-labelledby="hero-title" aria-describedby="hero-description">
             <div class="hero-banner-container">
-                <h1 id="hero-title" class="event-title">Side Quest Market</h1>
-                <p class="hero-subtitle lead" id="hero-description">Alternative Gaming Market</p>
                 <p class="hero-date emphasis">Coming to Nottingham &amp; Leeds — Autumn 2026</p>
                 <div class="upcoming-events-list">
                     <p> <strong>Nottingham</strong> — 21st &amp; 22nd November 2026</p>
@@ -300,8 +312,9 @@
                         </div>
                         <div class="card-content" id="event-description-content">
                             <div class="faq-item">
-                                <p>Back for the 2nd time, The Side Quest Market will now be running throughout the weekend.
-                                    This family friendly event can offer a wide shopping experience with 40 vendors. Activities and workshops running throughout the weekend, including D&D workshops, Vampires of Masquarade and miniatures painting workshops.</p>
+                                <p>Thank you to all of you wonder patrons who came to check out the 2nd Side Quest Market this past May 2026, our first full weekend event.
+                                    Make sure to be on the lookout for our next events, where our family friendly focus offers a wide shopping experience for all things gaming, tabletop, creative and artistic wares at over 40 different vendors each market.
+                                    Activities, workshops and open gaming also feature as part of the Side Quest Market including D&D workshops and miniatures painting workshops.</p>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -1005,7 +1018,7 @@
                 <h2 id="contact-title" class="section-heading">Contact Us</h2>
                 <div class="contact-container">
                     <div class="contact-intro">
-                        <p id="contact-description">Have questions about the event? Get in touch with us and we'll get
+                        <p id="contact-description">Have questions about an event? Get in touch with us and we'll get
                             back to you as soon as possible.</p>
                     </div>
 
@@ -1208,6 +1221,8 @@
 
     <!-- Development only - Accessibility testing -->
     <script src="js/accessibility-test.js"></script>
+
+    <script src="js/hero-slideshow.js"></script>
 </body>
 
 </html>

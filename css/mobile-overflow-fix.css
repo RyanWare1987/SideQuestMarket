@@ -61,7 +61,8 @@ img, video, iframe, canvas, svg, picture {
   
   /* Fix all major sections */
   .site-header,
-  .hero-image-section,
+  .hero-slideshow-section,
+  .hero-slideshow-mobile,
   .hero-banner-section,
   .event-info-section,
   .venue-details-section,
@@ -74,6 +75,18 @@ img, video, iframe, canvas, svg, picture {
     margin: 0 !important;
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+
+  /* Push mobile slideshow below fixed header */
+  .hero-slideshow-mobile {
+    margin-top: 60px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Push page-header-section below fixed header on sub-pages */
+  .page-header-section {
+    margin-top: 60px !important;
   }
   
   /* Fix navigation container */

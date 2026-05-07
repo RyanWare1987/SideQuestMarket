@@ -41,7 +41,7 @@ body {
   }
 
   /* Ensure no sections create their own scroll bars */
-  .hero-image-section,
+  .hero-slideshow-section,
   .hero-banner-section,
   .event-info-section,
   .venue-details-section,
@@ -90,7 +90,7 @@ body {
     overflow: hidden !important;
   }
 
-  .hero-image-section,
+  .hero-slideshow-section,
   .hero-banner-section {
     overflow-x: hidden !important;
     overflow-y: visible !important;
@@ -131,36 +131,10 @@ svg {
     position: relative !important;
   }
 
-  /* MOBILE LOGO/VIDEO SECTION - Enhanced with more space and better logo */
-  .mobile-logo-section {
-    display: block !important;
-    width: 100% !important;
-    background: #000 !important;
-    padding: 0 !important;
-    text-align: center !important;
-    border-bottom: 4px solid var(--color-accent-gold) !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2) !important;
-  }
+  /* MOBILE LOGO/VIDEO SECTION - DEPRECATED: replaced by hero-slideshow-mobile */
+  /* .mobile-logo-section styles removed - section replaced by slideshow */
 
-  .mobile-logo-container {
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    padding: 1rem 0 !important;
-  }
-
-  .mobile-hero-logo {
-    width: 320px !important;
-    height: auto !important;
-    max-width: 95% !important;
-    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.4)) !important;
-    transition: transform 0.3s ease !important;
-  }
-
-  .mobile-hero-logo:hover {
-    transform: scale(1.05) !important;
-  }
+  /* DEPRECATED: mobile-logo-container and mobile-hero-logo styles removed - replaced by slideshow */
 
   /* Mobile video hero */
   .mobile-video-container {
@@ -180,18 +154,13 @@ svg {
     object-fit: cover !important;
   }
 
-  /* HIDE the blank purple hero-image-section on mobile */
-  .hero-image-section {
-    display: none !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-  }
+  /* DEPRECATED: hero-image-section replaced by hero-slideshow-section */
+  /* .hero-image-section hidden on mobile - no longer needed */
 
   /* Ensure all sections fit within viewport */
   .site-header,
-  .mobile-logo-section,
-  .hero-image-section,
+  .hero-slideshow-mobile,
+  .hero-slideshow-section,
   .hero-banner-section,
   .event-info-section,
   .venue-details-section,
@@ -341,13 +310,7 @@ svg {
     text-align: center !important;
   }
 
-  /* Fix 2: Hide background logo on mobile */
-  .hero-image-section {
-    background-image: none !important;
-    background: linear-gradient(135deg, var(--color-deep-purple) 0%, var(--color-mystic-purple) 100%) !important;
-    height: auto !important;
-    min-height: 300px !important;
-  }
+  /* DEPRECATED: hero-image-section background logo fix no longer needed */
 
   /* Fix 3: Center all section headings */
   .section-heading {
@@ -964,11 +927,7 @@ svg {
   }
 }
 
-/* Hero Image Section Pattern */
-.hero-image-section {
-  height: 60vh;
-  min-height: 400px;
-}
+/* DEPRECATED: Hero Image Section Pattern - replaced by hero-slideshow-section */
 
 /* Hero Banner Section Pattern */
 .hero-banner-section {
@@ -976,37 +935,12 @@ svg {
 }
 
 @media (min-width: 768px) {
-  .hero-image-section {
-    height: 70vh;
-    min-height: 500px;
-  }
-
   .hero-banner-section {
     padding: var(--space-8) 0;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-image-section {
-    height: 65vh;
-    /* Reduced from 75vh to make background logo smaller */
-    min-height: 550px;
-    /* Reduced from 600px */
-    background-size: 75% auto;
-    /* Make background logo smaller - 75% instead of cover */
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
-}
-
-@media (min-width: 1280px) {
-  .hero-image-section {
-    height: 60vh;
-    /* Even smaller on very large screens */
-    min-height: 500px;
-    background-size: 70% auto;
-    /* Even smaller background logo on large screens */
-  }
 }
 
 /* Two Column Layout Pattern */
@@ -1202,15 +1136,7 @@ svg {
     display: none !important;
   }
 
-  /* Ensure mobile logo section is completely hidden on desktop */
-  .mobile-logo-section {
-    display: none !important;
-    visibility: hidden !important;
-    height: 0 !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    overflow: hidden !important;
-  }
+  /* DEPRECATED: mobile-logo-section replaced by hero-slideshow-mobile (uses mobile-only class) */
 }
 
 .tablet-up {
@@ -1222,12 +1148,7 @@ svg {
     display: block;
   }
 
-  /* Restore hero-image-section on desktop with more height */
-  .hero-image-section {
-    display: block !important;
-    height: 75vh !important;
-    min-height: 600px !important;
-  }
+  /* DEPRECATED: hero-image-section replaced by hero-slideshow-section (uses tablet-up class) */
 
   /* Optimize hero banner section spacing for smaller background logo */
   .hero-banner-section {
@@ -1652,30 +1573,13 @@ svg {
     text-align: center;
   }
 
-  /* Restore hero-image-section on desktop with repositioned logo */
-  .hero-image-section {
-    display: block !important;
-    height: 600px !important;
-    /* Fixed height to match banner aspect ratio */
-    min-height: 600px !important;
-    /* Same as height for consistency */
-    background-size: cover !important;
-    /* Cover to fill space without distortion */
-    background-position: center top !important;
-    /* Fixed position - top aligned */
-    background-repeat: no-repeat !important;
-    background-color: var(--color-deep-purple) !important;
-    /* Back to purple */
-  }
+  /* DEPRECATED: hero-image-section replaced by hero-slideshow-section */
 
-  /* Set specific height for hero banner section - make it shorter to show more background */
+  /* Hero banner section - auto height to fit content */
   .hero-banner-section {
-    height: 280px !important;
-    /* Reduced from 400px to show more background logo */
-    max-height: 280px !important;
-    /* Ensure it doesn't exceed 280px */
-    padding: 0 !important;
-    /* Remove padding, use flexbox for centering */
+    height: auto !important;
+    max-height: none !important;
+    padding: 3rem 0 !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -1747,28 +1651,16 @@ svg {
 }
 
 @media (min-width: 1280px) {
-  .hero-image-section {
-    height: 75vh !important;
-    /* Increased height for better spacing */
-    min-height: 450px !important;
-    /* Increased min-height */
-    background-size: 70% auto !important;
-    /* Keep smaller background logo */
-    background-position: center calc(50% - 50px) !important;
-    /* Keep logo moved up 50px behind header */
-    background-color: var(--color-deep-purple) !important;
-    /* Back to purple */
-  }
+  /* DEPRECATED: hero-image-section replaced by hero-slideshow-section */
 
-  /* Keep 400px height on large screens too */
+  /* Hero banner section - auto height on large screens too */
   .hero-banner-section {
-    height: 400px !important;
-    /* Same fixed height on large screens */
-    max-height: 400px !important;
+    height: auto !important;
+    max-height: none !important;
+    padding: 3rem 0 !important;
   }
 
   .hero-banner-container {
     padding: 1rem 2rem !important;
-    /* Keep minimal padding */
   }
 }

@@ -1,16 +1,5 @@
 /* ── Gallery Page ─────────────────────────────────────────────────────────── */
 
-/* Force body padding so fixed header is never covered */
-body {
-  padding-top: 70px !important;
-}
-
-@media (min-width: 768px) {
-  body {
-    padding-top: 80px !important;
-  }
-}
-
 /* Hero — sits below the fixed header (header height = 70px, body already has padding-top:70px from components.css) */
 .gallery-hero {
   background:
