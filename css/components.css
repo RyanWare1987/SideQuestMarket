@@ -460,17 +460,7 @@ body {
    HERO SECTION COMPONENT
    =================================== */
 
-/* Hero Image Section */
-.hero-image-section {
-  position: relative;
-  height: 70vh;
-  background-color: var(--color-deep-purple);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  overflow: hidden;
-}
+/* DEPRECATED: Hero Image Section - replaced by hero-slideshow-section in hero-slideshow.css */
 
 .hero-image-overlay {
   position: absolute;

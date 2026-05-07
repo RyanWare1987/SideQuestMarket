@@ -1,0 +1,42 @@
+/* ── Hero Banner Slideshow ────────────────────────────────────────────────── */
+
+/* Desktop slideshow section */
+.hero-slideshow-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a0d2e;
+  margin-top: 70px;
+}
+
+@media (min-width: 768px) {
+  .hero-slideshow-section {
+    margin-top: 75px;
+  }
+}
+
+/* Mobile slideshow section */
+.hero-slideshow-mobile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1a0d2e;
+  margin-top: 60px !important;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Individual slides */
+.slideshow-slide {
+  display: none;
+  width: 100%;
+  height: auto;
+}
+
+.slideshow-slide.active {
+  display: block;
+}
